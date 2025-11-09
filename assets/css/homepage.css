@@ -1,2 +1,378 @@
-/* placeholder comment */
+/* ====== Global Styles ====== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'Segoe UI', sans-serif;
+}
 
+body {
+    background-color: #FFE6D4;
+    color: #333;
+    scroll-behavior: smooth;
+}
+
+/* ====== Header ====== */
+header {
+    background: linear-gradient(135deg, #CD2C58, #E06B80);
+    color: white;
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    font-size: 1.7rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #FFC69D;
+}
+
+/* ====== Hero Section ====== */
+.hero {
+    background: linear-gradient(135deg, #CD2C58 0%, #E06B80 100%);
+    color: white;
+    padding: 9rem 2rem 6rem;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    animation: fadeInDown 1.2s ease;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    opacity: 0.9;
+}
+
+.hero-buttons {
+    margin-top: 2rem;
+}
+
+.btn {
+    padding: 12px 30px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 30px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-primary {
+    background-color: #FFC69D;
+    color: #CD2C58;
+    font-weight: 600;
+}
+
+.btn-primary:hover {
+    background-color: #FFE6D4;
+    transform: translateY(-3px);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 2px solid white;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: white;
+    color: #CD2C58;
+}
+
+/* ====== Sections ====== */
+section {
+    padding: 5rem 2rem;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ====== Headings ====== */
+h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    color: #CD2C58;
+}
+
+/* ====== Internships ====== */
+.internships-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.internship-card {
+    background: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(205, 44, 88, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.internship-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 10px 25px rgba(205, 44, 88, 0.25);
+}
+
+.internship-card h3 {
+    color: #CD2C58;
+    margin-bottom: 0.5rem;
+}
+
+.deadline {
+    color: #E06B80;
+    font-weight: bold;
+    display: block;
+    margin-top: 1rem;
+}
+
+/* ====== View All Button ====== */
+.view-all {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.btn-view-all {
+    background-color: #CD2C58;
+    color: white;
+    padding: 12px 35px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-view-all:hover {
+    background-color: #E06B80;
+    transform: translateY(-3px);
+}
+
+/* ====== Features ====== */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.feature-item {
+    background: white;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 4px 15px rgba(224, 107, 128, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+}
+
+.feature-item h3 {
+    color: #E06B80;
+    margin-bottom: 1rem;
+}
+
+/* ====== Who We Are Section ====== */
+.who-we-are-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.who-we-are-card {
+    background: white;
+    padding: 3rem 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(205, 44, 88, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.who-we-are-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 10px 25px rgba(205, 44, 88, 0.25);
+}
+
+.contact-card {
+    background: linear-gradient(135deg, #CD2C58 0%, #E06B80 100%);
+    color: white;
+}
+
+.developers-card {
+    background: linear-gradient(135deg, #FFC69D 0%, #FFE6D4 100%);
+    color: #CD2C58;
+}
+
+.who-we-are-card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.who-we-are-card p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.back-button {
+    display: inline-block;
+    margin-top: 3rem;
+    padding: 12px 30px;
+    background-color: #CD2C58;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #E06B80;
+}
+
+/* ====== Footer ====== */
+footer {
+    background-color: #CD2C58;
+    color: white;
+    padding: 4rem 2rem 2rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section h3 {
+    color: #FFC69D;
+    margin-bottom: 1rem;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section a {
+    color: #FFE6D4;
+    text-decoration: none;
+}
+
+.footer-section a:hover {
+    color: #FFC69D;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 230, 212, 0.3);
+    color: #FFE6D4;
+}
+
+/* ====== Animations ====== */
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ====== Who We Are Page Specific Styles ====== */
+.who-we-are-page .container {
+    padding: 8rem 2rem 5rem;
+}
+
+.who-we-are-page h1 {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #CD2C58;
+    font-size: 2.5rem;
+}
+
+.who-we-are-page .options-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.who-we-are-page .option-card {
+    background: white;
+    padding: 3rem 2rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(205, 44, 88, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.who-we-are-page .option-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 10px 25px rgba(205, 44, 88, 0.25);
+}
+
+.who-we-are-page .contact-card {
+    background: linear-gradient(135deg, #CD2C58 0%, #E06B80 100%);
+    color: white;
+}
+
+.who-we-are-page .developers-card {
+    background: linear-gradient(135deg, #FFC69D 0%, #FFE6D4 100%);
+    color: #CD2C58;
+}
+
+.who-we-are-page .option-card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+}
+
+.who-we-are-page .option-card p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
