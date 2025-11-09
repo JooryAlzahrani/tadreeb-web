@@ -1,1 +1,106 @@
-<!-- placeholder comment -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Who We Are - Tadreeb</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .who-we-are-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .who-we-are-card {
+            background: white;
+            padding: 3rem 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(205, 44, 88, 0.1);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .who-we-are-card:hover {
+            transform: translateY(-7px);
+            box-shadow: 0 10px 25px rgba(205, 44, 88, 0.25);
+        }
+        
+        .contact-card {
+            background: linear-gradient(135deg, #CD2C58 0%, #E06B80 100%);
+            color: white;
+        }
+        
+        .developers-card {
+            background: linear-gradient(135deg, #FFC69D 0%, #FFE6D4 100%);
+            color: #CD2C58;
+        }
+        
+        .who-we-are-card h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+        
+        .who-we-are-card p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        
+        .back-button {
+            display: inline-block;
+            margin-top: 3rem;
+            padding: 12px 30px;
+            background-color: #CD2C58;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .back-button:hover {
+            background-color: #E06B80;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>Tadreeb - Who We Are</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container" style="padding: 8rem 2rem 5rem;">
+        <h1>Get to Know Tadreeb Team</h1>
+        
+        <div class="who-we-are-grid">
+            <a href="contact-us.html" style="text-decoration: none;">
+                <div class="who-we-are-card contact-card">
+                    <h2>Contact Us</h2>
+                    <p>Click here to contact us and to inform us about new opportunities</p>
+                </div>
+            </a>
+            
+            <a href="developers.html" style="text-decoration: none;">
+                <div class="who-we-are-card developers-card">
+                    <h2>Meet the Developers</h2>
+                    <p>Get to know the amazing team behind Tadreeb platform</p>
+                </div>
+            </a>
+        </div>
+        
+        <div style="text-align: center;">
+            <a href="index.html" class="back-button">← Back to Home</a>
+        </div>
+    </div>
+</body>
+</html>
