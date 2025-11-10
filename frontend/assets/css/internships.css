@@ -27,8 +27,8 @@
 .filters select {
   padding: 10px 18px;
   border-radius: 30px;
-  border: 2px solid #FF8360; /* consistent primary accent */
-  background-color: #FEF5EF;  /* global background */
+  border: 2px solid #A3BAC3; /* consistent primary accent */
+  background-color: #FFFFFF;  /* global background */
   color: #584B53;             /* global text color */
   font-size: 1rem;
   font-weight: 500;
@@ -38,7 +38,7 @@
 
 .filters select:hover,
 .filters select:focus {
-  border-color: #FF8360;
+  border-color: #006989;
   outline: none;
   box-shadow: 0 0 8px rgba(255, 131, 96, 0.2);
 }
@@ -85,19 +85,19 @@
 }
 
 .modal-content h2 {
-  color: #FF8360;
+  color: #006989;
   margin-bottom: 1rem;
 }
 
 .modal-content p {
   margin: 0.5rem 0;
-  color: #584B53;
+  color: #231F20;
 }
 
 .modal-content a {
   display: inline-block;
   margin-top: 1rem;
-  background-color: #FF8360;
+  background-color: #00B1CC;
   color: #FEF5EF;
   padding: 10px 25px;
   border-radius: 30px;
@@ -106,7 +106,7 @@
 }
 
 .modal-content a:hover {
-  background-color: #D9774B;
+  background-color: #006989;
 }
 
 .close {
@@ -115,7 +115,7 @@
   right: 15px;
   font-size: 1.5rem;
   cursor: pointer;
-  color: #FF8360;
+  color: #00B1CC;
 }
 
 /* ===== Reviews Section ===== */
@@ -125,7 +125,7 @@
 }
 
 .reviews-section h3 {
-  color: #FF8360;
+  color: #00B1CC;
   margin-bottom: 0.5rem;
 }
 
@@ -133,7 +133,7 @@
   margin: 0 auto 1rem auto; /* center the reviews box */
   max-height: 200px;
   overflow-y: auto;
-  border: 1px solid rgba(255, 131, 96, 0.3);
+  border: 1px solid rgba(96, 120, 255, 0.3);
   padding: 0.5rem;
   border-radius: 10px;
   background: rgba(254, 245, 239, 0.7);
@@ -150,7 +150,7 @@
   margin: 0.5rem auto; /* auto margins center it */
   padding: 0.5rem;
   border-radius: 10px;
-  border: 1px solid #FF8360;
+  border: 1px solid #006989;
   resize: none;
   color: #584B53;
   background-color: #FEF5EF;
@@ -161,7 +161,7 @@
   padding: 8px 20px;
   border: none;
   border-radius: 30px;
-  background-color: #FF8360;
+  background-color: #00B1CC;
   color: #FEF5EF;
   cursor: pointer;
   transition: 0.3s;
@@ -170,5 +170,5 @@
 }
 
 #submitReview:hover {
-  background-color: #D9774B;
+  background-color: #006989;
 }
