@@ -7,15 +7,15 @@
 }
 
 body {
-    background-color: #FFE6D4;
-    color: #333;
+    background-color: #FEF5EF;
+    color: #584B53;
     scroll-behavior: smooth;
 }
 
 /* ====== Header ====== */
 header {
-    background: linear-gradient(135deg, #CD2C58, #E06B80);
-    color: white;
+    background: linear-gradient(135deg, #584B53, #FF8360);
+    color: FEF5EF;
     padding: 1rem 2rem;
     position: fixed;
     width: 100%;
@@ -43,14 +43,14 @@ nav {
 }
 
 .nav-links a {
-    color: white;
+    color: FEF5EF;
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-    color: #FFC69D;
+    color: #FF8360;
 }
 
 /* ====== Buttons ====== */
@@ -65,28 +65,27 @@ nav {
 }
 
 .btn-primary {
-    background-color: #FFC69D;
-    color: #CD2C58;
+    background-color: #FF8360;
+    color: #FEF5EF;
     font-weight: 600;
 }
 
 .btn-primary:hover {
-    background-color: #FFE6D4;
+    background-color: #D6E3F8;
     transform: translateY(-3px);
 }
 
 .btn-secondary {
     background-color: transparent;
-    border: 2px solid white;
-    color: white;
+    border: 2px solid #FEF5EF;
+    color: #FEF5EF;
 }
 
 .btn-secondary:hover {
-    background-color: white;
-    color: #CD2C58;
+    background-color: #FEF5EF;
+    color: #584B53;
 }
 
-/* ====== Sections & Containers ====== */
 section {
     padding: 5rem 2rem;
 }
@@ -96,15 +95,13 @@ section {
     margin: 0 auto;
 }
 
-/* ====== Headings ====== */
 h2 {
     text-align: center;
     margin-bottom: 3rem;
     font-size: 2.5rem;
-    color: #CD2C58;
+    color: #584B53;
 }
 
-/* ====== Cards ====== */
 .internships-grid, .features-grid, .who-we-are-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -112,24 +109,29 @@ h2 {
 }
 
 .internship-card, .feature-item, .who-we-are-card {
-    background: white;
-    padding: 2rem;
+    background: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 2rem;
     text-align: center;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .internship-card {
-    box-shadow: 0 5px 15px rgba(205, 44, 88, 0.1);
+    box-shadow: 0 5px 15px rgba(255, 131, 96, 0.1);
 }
 
 .internship-card:hover {
+    background: rgba(255, 255, 255, 0.8);
     transform: translateY(-7px);
-    box-shadow: 0 10px 25px rgba(205, 44, 88, 0.25);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
 }
 
 .feature-item {
-    box-shadow: 0 4px 15px rgba(224, 107, 128, 0.1);
+    box-shadow: 0 4px 15px rgba(255, 131, 96, 0.1);
 }
 
 .feature-item:hover {
@@ -137,42 +139,40 @@ h2 {
 }
 
 .who-we-are-card {
-    box-shadow: 0 5px 15px rgba(205, 44, 88, 0.1);
+    box-shadow: 0 5px 15px rgba(255, 131, 96, 0.1);
     cursor: pointer;
 }
 
 .who-we-are-card:hover {
     transform: translateY(-7px);
-    box-shadow: 0 10px 25px rgba(205, 44, 88, 0.25);
+    box-shadow: 0 10px 25px rgba(255, 131, 96, 0.25);
 }
 
-/* ====== Colors & Typography ====== */
 .internship-card h3, .who-we-are-card h3 {
-    color: #CD2C58;
+    color: #FF8360;
     margin-bottom: 0.5rem;
 }
 
 .deadline {
-    color: #E06B80;
+    color: #58B09C;
     font-weight: bold;
     display: block;
     margin-top: 1rem;
 }
 
 .feature-item h3 {
-    color: #E06B80;
+    color: #D6E3F8;
     margin-bottom: 1rem;
 }
 
-/* ====== View All Button ====== */
 .view-all {
     text-align: center;
     margin-top: 2rem;
 }
 
 .btn-view-all {
-    background-color: #CD2C58;
-    color: white;
+    background-color: #584B53;
+    color: #FEF5EF;
     padding: 12px 35px;
     border-radius: 30px;
     text-decoration: none;
@@ -181,14 +181,13 @@ h2 {
 }
 
 .btn-view-all:hover {
-    background-color: #E06B80;
+    background-color: #FF8360;
     transform: translateY(-3px);
 }
 
-/* ====== Footer ====== */
 footer {
-    background-color: #CD2C58;
-    color: white;
+    background-color: #584B53;
+    color: #FEF5EF;
     padding: 4rem 2rem 2rem;
 }
 
@@ -201,7 +200,7 @@ footer {
 }
 
 .footer-section h3 {
-    color: #FFC69D;
+    color: #FF8360;
     margin-bottom: 1rem;
 }
 
@@ -214,23 +213,22 @@ footer {
 }
 
 .footer-section a {
-    color: #FFE6D4;
+    color: #FEF5EF;
     text-decoration: none;
 }
 
 .footer-section a:hover {
-    color: #FFC69D;
+    color: #FF8360;
 }
 
 .footer-bottom {
     text-align: center;
     margin-top: 2rem;
     padding-top: 2rem;
-    border-top: 1px solid rgba(255, 230, 212, 0.3);
-    color: #FFE6D4;
+    border-top: 1px solid rgba(254, 245, 239, 0.3);
+    color: #FEF5EF;
 }
 
-/* ====== Animations ====== */
 @keyframes fadeInDown {
     0% { opacity: 0; transform: translateY(-20px); }
     100% { opacity: 1; transform: translateY(0); }

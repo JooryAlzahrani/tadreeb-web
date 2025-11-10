@@ -1,185 +1,296 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>All Internship Opportunities - Tadreeb</title>
-    <link rel="stylesheet" href="../css/internships.css">
-    <link rel="stylesheet" href="../assets/css/global.css">
-    <style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Internship Opportunities - Tadreeb</title>
+  <link rel="stylesheet" href="../assets/css/global.css">
+  <link rel="stylesheet" href="../assets/css/internships.css">
 
-.modal {
-            display: none;
-            position: fixed;
-            z-index: 2000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0,0,0,0.6);
-        }
-
-        .modal-content {
-            background-color: #fff;
-            margin: 10% auto;
-            padding: 2rem;
-            border-radius: 15px;
-            width: 90%;
-            max-width: 500px;
-            text-align: center;
-            box-shadow: 0 5px 25px rgba(205,44,88,0.25);
-            position: relative;
-        }
-
-        .modal-content h2 {
-            color: #CD2C58;
-            margin-bottom: 1rem;
-        }
-
-        .modal-content p {
-            margin: 0.5rem 0;
-        }
-
-        .modal-content a {
-            display: inline-block;
-            margin-top: 1rem;
-            background-color: #CD2C58;
-            color: #fff;
-            padding: 10px 25px;
-            border-radius: 30px;
-            text-decoration: none;
-            transition: 0.3s;
-        }
-
-        .modal-content a:hover {
-            background-color: #E06B80;
-        }
-
-        .close {
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            font-size: 1.5rem;
-            cursor: pointer;
-            color: #CD2C58;
-        }
-    </style>
+  
 </head>
+
 <body>
 
-    <header>
-        <nav>
-            <div class="logo">
-                <h1>Tadreeb</h1>
-            </div>
-            <ul class="nav-links">
-                <li><a href="homepage.html">Home</a></li>
-                <li><a href="internships.html" class="active">Internships</a></li>
-                <li><a href="#login">Login / Register</a></li>
-            </ul>
-        </nav>
-    </header>
+  <header>
+    <nav>
+      <div class="logo">
+        <h1>Tadreeb</h1>
+      </div>
+      <ul class="nav-links">
+        <li><a href="homepage.html">Home</a></li>
+        <li><a href="internships.html" class="active">Internships</a></li>
+        <li><a href="#login">Login / Register</a></li>
+      </ul>
+    </nav>
+  </header>
 
-   
-    <section class="all-internships">
-        <div class="container">
-            <h2>All Internship Opportunities</h2>
-            <div class="internships-grid">
+  <section class="all-internships">
+    <div class="container">
+      <h2>All Internship Opportunities</h2>
 
-                
-                <div class="internship-card" onclick="openModal(this)"
-                     data-title="KPMG"
-                     data-description="Great internship in Software Development. Gain hands-on experience with cloud technologies and agile projects."
-                     data-location="Riyadh"
-                     data-deadline="Jan 25, 2025"
-                     data-link="https://home.kpmg/sa/en/home/careers.html">
-                    <h3>KPMG</h3>
-                    <p>Internship in Software Development</p>
-                    <p>Riyadh</p>
-                    <span class="deadline">Deadline: Jan 25, 2025</span>
-                </div>
+      <div class="filters">
+        <select id="locationFilter" onchange="filterInternships()">
+          <option value="all">All Locations</option>
+          <option value="Riyadh">Riyadh</option>
+          <option value="Jeddah">Jeddah</option>
+          <option value="Dhahran">Dhahran</option>
+        </select>
 
-                <div class="internship-card" onclick="openModal(this)"
-                     data-title="P&G"
-                     data-description="Cybersecurity internship opportunity at P&G. Work on real-world security challenges and projects."
-                     data-location="Jeddah"
-                     data-deadline="Jan 20, 2025"
-                     data-link="https://www.pgcareers.com/">
-                    <h3>P&G</h3>
-                    <p>Internship in Cybersecurity</p>
-                    <p>Jeddah</p>
-                    <span class="deadline">Deadline: Jan 20, 2025</span>
-                </div>
+        <select id="majorFilter" onchange="filterInternships()">
+          <option value="all">All Majors</option>
+          <option value="Software Development">Software Development</option>
+          <option value="Cybersecurity">Cybersecurity</option>
+          <option value="Machine Learning">Machine Learning</option>
+          <option value="Information Technology">Information Technology</option>
+        </select>
 
-                <div class="internship-card" onclick="openModal(this)"
-                     data-title="PwC"
-                     data-description="Machine Learning internship. Learn from top experts and apply ML techniques in real business scenarios."
-                     data-location="Riyadh"
-                     data-deadline="Feb 1, 2025"
-                     data-link="https://www.pwc.com/">
-                    <h3>PwC</h3>
-                    <p>Internship in Machine Learning</p>
-                    <p>Riyadh</p>
-                    <span class="deadline">Deadline: Feb 1, 2025</span>
-                </div>
+        <select id="statusFilter" onchange="filterInternships()">
+          <option value="all">All Statuses</option>
+          <option value="open">Open</option>
+          <option value="closed">Closed</option>
+        </select>
+      </div>
 
-
-            </div>
+      <div class="internships-grid">
+        <div class="internship-card" onclick="openModal(this)"
+             data-title="KPMG"
+             data-major="Software Development"
+             data-status="open"
+             data-description="Great internship in Software Development. Gain hands-on experience with cloud technologies and agile projects."
+             data-location="Riyadh"
+             data-deadline="Jan 25, 2025"
+             data-link="https://home.kpmg/sa/en/home/careers.html">
+          <h3>KPMG</h3>
+          <p>Internship in Software Development</p>
+          <p>Riyadh</p>
+          <span class="deadline">Deadline: Jan 25, 2025</span>
         </div>
-    </section>
 
-    <div id="internshipModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeModal()">&times;</span>
-            <h2 id="modalTitle"></h2>
-            <p id="modalDescription"></p>
-            <p id="modalLocation"></p>
-            <p id="modalDeadline"></p>
-            <a id="modalLink" href="#" target="_blank">Go to Website</a>
+        <div class="internship-card" onclick="openModal(this)"
+             data-title="P&G"
+             data-major="Cybersecurity"
+             data-status="closed"
+             data-description="Cybersecurity internship opportunity at P&G. Work on real-world security challenges and projects."
+             data-location="Jeddah"
+             data-deadline="Jan 20, 2025"
+             data-link="https://www.pgcareers.com/">
+          <h3>P&G</h3>
+          <p>Internship in Cybersecurity</p>
+          <p>Jeddah</p>
+          <span class="deadline">Deadline: Jan 20, 2025</span>
         </div>
+
+        <div class="internship-card" onclick="openModal(this)"
+             data-title="PwC"
+             data-major="Machine Learning"
+             data-status="open"
+             data-description="Machine Learning internship. Learn from top experts and apply ML techniques in real business scenarios."
+             data-location="Riyadh"
+             data-deadline="Feb 1, 2025"
+             data-link="https://www.pwc.com/">
+          <h3>PwC</h3>
+          <p>Internship in Machine Learning</p>
+          <p>Riyadh</p>
+          <span class="deadline">Deadline: Feb 1, 2025</span>
+        </div>
+
+        <div class="internship-card" onclick="openModal(this)"
+             data-title="Aramco"
+             data-major="Information Technology"
+             data-status="closed"
+             data-description="IT Co-operative training available for current university students."
+             data-location="Dhahran"
+             data-deadline="Oct 20, 2025"
+             data-link="https://www.aramco.com/en/careers/for-saudi-applicants/student-opportunities/university-and-vocational-college-internship-programs/university-internship-program">
+          <h3>Aramco</h3>
+          <p>Internship in Information Technology</p>
+          <p>Dhahran</p>
+          <span class="deadline">Deadline: Oct 20, 2025</span>
+        </div>
+        <div class="internship-card" onclick="openModal(this)"
+             data-title="KPMG"
+             data-major="Software Development"
+             data-status="open"
+             data-description="Great internship in Software Development. Gain hands-on experience with cloud technologies and agile projects."
+             data-location="Riyadh"
+             data-deadline="Jan 25, 2025"
+             data-link="https://home.kpmg/sa/en/home/careers.html">
+          <h3>KPMG</h3>
+          <p>Internship in Software Development</p>
+          <p>Riyadh</p>
+          <span class="deadline">Deadline: Jan 25, 2025</span>
+        </div>
+
+        <div class="internship-card" onclick="openModal(this)"
+             data-title="P&G"
+             data-major="Cybersecurity"
+             data-status="closed"
+             data-description="Cybersecurity internship opportunity at P&G. Work on real-world security challenges and projects."
+             data-location="Jeddah"
+             data-deadline="Jan 20, 2025"
+             data-link="https://www.pgcareers.com/">
+          <h3>P&G</h3>
+          <p>Internship in Cybersecurity</p>
+          <p>Jeddah</p>
+          <span class="deadline">Deadline: Jan 20, 2025</span>
+        </div>
+
+        <div class="internship-card" onclick="openModal(this)"
+             data-title="PwC"
+             data-major="Machine Learning"
+             data-status="open"
+             data-description="Machine Learning internship. Learn from top experts and apply ML techniques in real business scenarios."
+             data-location="Riyadh"
+             data-deadline="Feb 1, 2025"
+             data-link="https://www.pwc.com/">
+          <h3>PwC</h3>
+          <p>Internship in Machine Learning</p>
+          <p>Riyadh</p>
+          <span class="deadline">Deadline: Feb 1, 2025</span>
+        </div>
+
+        <div class="internship-card" onclick="openModal(this)"
+             data-title="Aramco"
+             data-major="Information Technology"
+             data-status="closed"
+             data-description="IT Co-operative training available for current university students."
+             data-location="Dhahran"
+             data-deadline="Oct 20, 2025"
+             data-link="https://www.aramco.com/en/careers/for-saudi-applicants/student-opportunities/university-and-vocational-college-internship-programs/university-internship-program">
+          <h3>Aramco</h3>
+          <p>Internship in Information Technology</p>
+          <p>Dhahran</p>
+          <span class="deadline">Deadline: Oct 20, 2025</span>
+        </div>
+      </div>
+      
+
     </div>
+  </section>
 
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Tadreeb Platform</h3>
-                <p>Centralized Internship Platform for Saudi University Students</p>
-            </div>
-            <div class="footer-section">
-                <h3>Contact Information</h3>
-                <ul>
-                    <li>Email: info@tadreeb.com</li>
-                    <li>Phone: 0112345678</li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 Tadreeb Platform. All rights reserved.</p>
-        </div>
-    </footer>
+  <div id="internshipModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <h2 id="modalTitle"></h2>
+    <p id="modalDescription"></p>
+    <p id="modalLocation"></p>
+    <p id="modalDeadline"></p>
+    <a id="modalLink" href="#" target="_blank">Go to Website</a>
 
-    <script>
-        function openModal(card) {
-            document.getElementById("modalTitle").innerText = card.dataset.title;
-            document.getElementById("modalDescription").innerText = card.dataset.description;
-            document.getElementById("modalLocation").innerText = "Location: " + card.dataset.location;
-            document.getElementById("modalDeadline").innerText = "Deadline: " + card.dataset.deadline;
-            document.getElementById("modalLink").href = card.dataset.link;
-            document.getElementById("internshipModal").style.display = "block";
+    <hr style="margin: 1.5rem 0;">
+
+    <!-- Reviews Section -->
+    <div class="reviews-section">
+      <h3>Reviews</h3>
+      <div id="reviewsList">
+        <!-- User reviews will appear here -->
+      </div>
+      <textarea id="reviewInput" placeholder="Write your review..." rows="3"></textarea>
+      <button id="submitReview">Submit Review</button>
+    </div>
+  </div>
+</div>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Tadreeb Platform</h3>
+        <p>Centralized Internship Platform for Saudi University Students</p>
+      </div>
+      <div class="footer-section">
+        <h3>Contact Information</h3>
+        <ul>
+          <li>Email: info@tadreeb.com</li>
+          <li>Phone: 0112345678</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Tadreeb Platform. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    function openModal(card) {
+      document.getElementById("modalTitle").innerText = card.dataset.title;
+      document.getElementById("modalDescription").innerText = card.dataset.description;
+      document.getElementById("modalLocation").innerText = "Location: " + card.dataset.location;
+      document.getElementById("modalDeadline").innerText = "Deadline: " + card.dataset.deadline;
+      document.getElementById("modalLink").href = card.dataset.link;
+      document.getElementById("internshipModal").style.display = "block";
+
+      loadReviews(card.dataset.title);
+    }
+
+    function closeModal() {
+      document.getElementById("internshipModal").style.display = "none";
+      document.getElementById("reviewsList").innerHTML = ""; 
+    }
+
+    document.getElementById("submitReview").addEventListener("click", function() {
+  const title = document.getElementById("modalTitle").innerText;
+  const reviewText = document.getElementById("reviewInput").value.trim();
+  if(reviewText === "") return;
+
+  // Store reviews in localStorage (simple approach)
+  const reviews = JSON.parse(localStorage.getItem(title)) || [];
+  reviews.push(reviewText);
+  localStorage.setItem(title, JSON.stringify(reviews));
+
+  // Display the new review
+  displayReviews(reviews);
+
+  // Clear input
+  document.getElementById("reviewInput").value = "";
+});
+
+function loadReviews(title) {
+  const reviews = JSON.parse(localStorage.getItem(title)) || [];
+  displayReviews(reviews);
+}
+
+function displayReviews(reviews) {
+  const reviewsList = document.getElementById("reviewsList");
+  reviewsList.innerHTML = "";
+  reviews.forEach(review => {
+    const p = document.createElement("p");
+    p.innerText = "• " + review;
+    reviewsList.appendChild(p);
+  });
+}
+
+    window.onclick = function(event) {
+      let modal = document.getElementById("internshipModal");
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    }
+
+    function filterInternships() {
+      const locationFilter = document.getElementById("locationFilter").value.toLowerCase();
+      const majorFilter = document.getElementById("majorFilter").value.toLowerCase();
+      const statusFilter = document.getElementById("statusFilter").value.toLowerCase();
+
+      const cards = document.querySelectorAll(".internship-card");
+
+      cards.forEach(card => {
+        const location = card.dataset.location.toLowerCase();
+        const major = card.dataset.major.toLowerCase();
+        const status = card.dataset.status.toLowerCase();
+
+        const matchLocation = locationFilter === "all" || location === locationFilter;
+        const matchMajor = majorFilter === "all" || major === majorFilter;
+        const matchStatus = statusFilter === "all" || status === statusFilter;
+
+        if (matchLocation && matchMajor && matchStatus) {
+          card.style.display = "block";
+        } else {
+          card.style.display = "none";
         }
-
-        function closeModal() {
-            document.getElementById("internshipModal").style.display = "none";
-        }
-
-        window.onclick = function(event) {
-            let modal = document.getElementById("internshipModal");
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-    </script>
+      });
+    }
+  </script>
 
 </body>
 </html>

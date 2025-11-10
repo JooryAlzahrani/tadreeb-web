@@ -1,8 +1,8 @@
 /* ===== Hero Section ===== */
 .hero {
-  background: linear-gradient(135deg, #CD2C58 0%, #E06B80 100%),
+  background: linear-gradient(135deg, #584B53 0%, #FF8360 100%),
               url("../images/hero-bg.jpg") center/cover no-repeat;
-  color: #fff;
+  color: #FEF5EF;
   text-align: center;
   padding: 100px 20px;
 }
@@ -32,7 +32,7 @@
   text-align: center;
   margin-top: 60px;
   margin-bottom: 30px;
-  color: #CD2C58;
+  color: #584B53;
 }
 
 .internships-grid {
@@ -42,26 +42,28 @@
 }
 
 .internship-card {
-  background: white;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   padding: 2rem;
   border-radius: 15px;
   text-align: center;
-  box-shadow: 0 5px 15px rgba(205, 44, 88, 0.1);
+  box-shadow: 0 5px 15px rgba(255, 131, 96, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .internship-card:hover {
   transform: translateY(-7px);
-  box-shadow: 0 10px 25px rgba(205, 44, 88, 0.25);
+  box-shadow: 0 10px 25px rgba(255, 131, 96, 0.25);
 }
 
 .internship-card h3 {
-  color: #CD2C58;
+  color: #FF8360;
   margin-bottom: 0.5rem;
 }
 
 .deadline {
-  color: #E06B80;
+  color: #197B99 !important;
   font-weight: bold;
   display: block;
   margin-top: 1rem;
@@ -73,8 +75,8 @@
 }
 
 .btn-view-all {
-  background-color: #CD2C58;
-  color: white;
+  background-color: #584B53;
+  color: #FEF5EF;
   padding: 12px 35px;
   border-radius: 30px;
   text-decoration: none;
@@ -82,20 +84,20 @@
 }
 
 .btn-view-all:hover {
-  background-color: #E06B80;
+  background-color: #FF8360;
   transform: translateY(-3px);
 }
 
 /* ===== Features Section ===== */
 .features {
-  background-color: #FFE6D4;
+  background-color: #FEF5EF;
   padding: 60px 0;
 }
 
 .features h2 {
   text-align: center;
   margin-bottom: 30px;
-  color: #CD2C58;
+  color: #584B53;
 }
 
 .features-grid {
@@ -105,10 +107,12 @@
 }
 
 .feature-item {
-  background: white;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   padding: 2rem;
   border-radius: 15px;
-  box-shadow: 0 4px 15px rgba(224, 107, 128, 0.1);
+  box-shadow: 0 4px 15px rgba(255, 131, 96, 0.1);
   text-align: center;
   transition: transform 0.3s ease;
 }
@@ -118,7 +122,7 @@
 }
 
 .feature-item h3 {
-  color: #E06B80;
+  color: #187795;
   margin-bottom: 1rem;
 }
 
@@ -129,20 +133,22 @@
 
 .who-we-are h2 {
   text-align: center;
-  color: #CD2C58;
+  color: #584B53;
   margin-bottom: 30px;
 }
 
 .who-we-are-card {
-  background: white;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   padding: 25px;
   border-radius: 15px;
   text-align: center;
-  box-shadow: 0 5px 15px rgba(205, 44, 88, 0.1);
+  box-shadow: 0 5px 15px rgba(255, 131, 96, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .who-we-are-card:hover {
   transform: translateY(-7px);
-  box-shadow: 0 10px 25px rgba(205, 44, 88, 0.25);
+  box-shadow: 0 10px 25px rgba(255, 131, 96, 0.25);
 }
