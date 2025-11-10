@@ -1,1 +1,169 @@
-<!-- placeholder comment -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - Tadreeb</title>
+  <link rel="stylesheet" href="../../assets/css/global.css">
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: #f8f8f8;
+      margin: 0;
+    }
+    header {
+      background-color: #CD2C58;
+      color: #fff;
+      padding: 1.2rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      font-size: 1.8rem;
+      margin: 0;
+    }
+    .logout-btn {
+      background-color: #fff;
+      color: #CD2C58;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .logout-btn:hover {
+      background-color: #E06B80;
+      color: #fff;
+    }
+    .dashboard-container {
+      padding: 2rem;
+    }
+    h2 {
+      color: #CD2C58;
+      margin-bottom: 1rem;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+    }
+    .dashboard-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+    }
+    .dashboard-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(205, 44, 88, 0.2);
+    }
+    .dashboard-card h3 {
+      color: #CD2C58;
+      margin-bottom: 0.8rem;
+    }
+    .table-container {
+      margin-top: 3rem;
+      background-color: #fff;
+      padding: 1.5rem;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th, td {
+      padding: 0.8rem;
+      border-bottom: 1px solid #ddd;
+      text-align: left;
+    }
+    th {
+      background-color: #CD2C58;
+      color: #fff;
+    }
+    .action-btn {
+      background-color: #CD2C58;
+      color: #fff;
+      border: none;
+      padding: 6px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .action-btn:hover {
+      background-color: #E06B80;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Tadreeb Admin Dashboard</h1>
+    <button class="logout-btn" onclick="logout()">Logout</button>
+  </header>
+
+  <div class="dashboard-container">
+    <h2>Admin Control Panel</h2>
+
+    <div class="card-grid">
+      <div class="dashboard-card" onclick="alert('Feature coming soon!')">
+        <h3>Manage Internships</h3>
+        <p>Add, update, or delete internship postings.</p>
+      </div>
+      <div class="dashboard-card" onclick="alert('Feature coming soon!')">
+        <h3>Manage Reviews</h3>
+        <p>Monitor and approve student reviews.</p>
+      </div>
+      <div class="dashboard-card" onclick="alert('Feature coming soon!')">
+        <h3>Manage Users</h3>
+        <p>View or remove inactive student accounts.</p>
+      </div>
+      <div class="dashboard-card" onclick="alert('Feature coming soon!')">
+        <h3>View Reports</h3>
+        <p>Track application numbers and acceptance rates.</p>
+      </div>
+    </div>
+
+    <div class="table-container">
+      <h2>Recent Internship Submissions</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Company</th>
+            <th>Position</th>
+            <th>Location</th>
+            <th>Deadline</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>STC</td>
+            <td>Software Engineer Intern</td>
+            <td>Riyadh</td>
+            <td>Jan 5, 2025</td>
+            <td><button class="action-btn">Delete</button></td>
+          </tr>
+          <tr>
+            <td>Aramco</td>
+            <td>Petroleum Intern</td>
+            <td>Dhahran</td>
+            <td>Dec 20, 2024</td>
+            <td><button class="action-btn">Delete</button></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <script>
+    function logout() {
+      window.location.href = "admin-login.html";
+    }
+  </script>
+</body>
+</html>

@@ -1,1 +1,91 @@
-<!-- placeholder comment -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login - Tadreeb</title>
+  <link rel="stylesheet" href="../../assets/css/global.css">
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: linear-gradient(135deg, #CD2C58 0%, #E06B80 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      color: #fff;
+    }
+    .login-container {
+      background-color: #fff;
+      color: #333;
+      padding: 3rem;
+      border-radius: 15px;
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.15);
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+    }
+    h1 {
+      color: #CD2C58;
+      margin-bottom: 1.5rem;
+    }
+    input {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+    button {
+      background-color: #CD2C58;
+      color: #fff;
+      border: none;
+      border-radius: 30px;
+      padding: 12px 30px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: 0.3s;
+      margin-top: 1rem;
+      width: 100%;
+    }
+    button:hover {
+      background-color: #E06B80;
+    }
+    .error-message {
+      color: #CD2C58;
+      font-size: 0.9rem;
+      margin-top: 0.5rem;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h1>Admin Login</h1>
+    <p>Please enter your admin credentials</p>
+    <form onsubmit="return validateLogin(event)">
+      <input type="text" id="username" placeholder="Username" required>
+      <input type="password" id="password" placeholder="Password" required>
+      <p class="error-message" id="errorMsg">Invalid credentials. Please try again.</p>
+      <button type="submit">Login</button>
+    </form>
+  </div>
+
+  <script>
+    function validateLogin(event) {
+      event.preventDefault();
+      const user = document.getElementById("username").value;
+      const pass = document.getElementById("password").value;
+
+      
+      if (user === "admin" && pass === "admin123") {
+        window.location.href = "admin-dashboard.html";
+      } else {
+        document.getElementById("errorMsg").style.display = "block";
+      }
+    }
+  </script>
+</body>
+</html>
