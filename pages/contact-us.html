@@ -1,1 +1,66 @@
-<!-- placeholder comment -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Tadreeb</title>
+</head>
+<body>
+    <header>
+    <nav>
+        <div class="logo">
+                <h1>Tadreeb - Contact Us</h1>
+            </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="who-we-are.html">Who We Are</a></li>
+            <li><a href="developers.html">Meet the Developers</a></li>
+        </ul>
+    </nav>
+</header>
+
+    <main class="contact-page-main">
+        <div class="card">
+            <h2>Send Us a Message</h2>
+            <p>We are here to help and answer your inquiries.</p>
+
+            <form action="#" method="POST">
+                
+                <div class="double-field">
+                    <div class="form-group">
+                        <label for="name">Full Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                </div>
+                
+                <div class="double-field">
+                    <div class="form-group">
+                        <label for="subject">Subject:</label>
+                        <input type="text" id="subject" name="subject">
+                    </div>
+
+                    <div class="form-group message-field">
+                        <label for="message">Your Message:</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                </div>
+                
+
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+                <div style="text-align: center; margin-top: 2rem;">
+                    <a href="who-we-are.html" class="btn back-button">← Back to Who We Are</a>
+                </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Tadreeb. All rights reserved.</p>
+    </footer>
+</body>
+</html>
