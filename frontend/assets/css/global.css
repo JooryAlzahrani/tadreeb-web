@@ -258,20 +258,19 @@ footer {
 }
 
 /* ---------- Admin Login ---------- */
-.admin-login {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-}
+
 .admin.admin-login {
   padding: 0 !important;
 }
 
 .admin-auth {
-  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   padding: 2rem;
 }
+
 
 .admin .login-container {
   background: rgba(255, 255, 255, 0.6);
