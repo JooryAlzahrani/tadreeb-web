@@ -1,72 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Admin Dashboard - Tadreeb</title>
-  <link rel="stylesheet" href="../../assets/css/global.css">
-  <link rel="stylesheet" href="auth.css">
-</head>
-<body>
 
-  <header>
-    <h1>Tadreeb Admin Dashboard</h1>
-    <button class="logout-btn" onclick="logout()">Logout</button>
+  
+  <link rel="stylesheet" href="../../assets/css/global.css" />
+</head>
+
+<body class="admin admin-dashboard">
+  <header class="admin-header">
+    <div class="admin-header-inner">
+      <div>
+        <h1 class="admin-title">Tadreeb Admin</h1>
+        <p class="admin-subtitle">Control Panel</p>
+      </div>
+
+      <div class="admin-header-actions">
+        <a class="admin-link" href="../index.html">View Website</a>
+        <button class="logout-btn" onclick="logout()">Logout</button>
+      </div>
+    </div>
   </header>
 
-  <div class="dashboard-container">
-    <h2>Admin Control Panel</h2>
+  <main class="dashboard-container">
+    <h2>Quick Actions</h2>
 
-    <div class="card-grid">
+    <section class="card-grid">
       <div class="dashboard-card" onclick="alert('Feature coming soon!')">
         <h3>Manage Internships</h3>
         <p>Add, update, or delete internship postings.</p>
       </div>
+
       <div class="dashboard-card" onclick="alert('Feature coming soon!')">
         <h3>Manage Reviews</h3>
         <p>Monitor and approve student reviews.</p>
       </div>
+
       <div class="dashboard-card" onclick="alert('Feature coming soon!')">
         <h3>Manage Users</h3>
         <p>View or remove inactive student accounts.</p>
       </div>
+
       <div class="dashboard-card" onclick="alert('Feature coming soon!')">
         <h3>View Reports</h3>
         <p>Track application numbers and acceptance rates.</p>
       </div>
-    </div>
+    </section>
 
-    <div class="table-container">
+    <section class="table-container">
       <h2>Recent Internship Submissions</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Company</th>
-            <th>Position</th>
-            <th>Location</th>
-            <th>Deadline</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>STC</td>
-            <td>Software Engineer Intern</td>
-            <td>Riyadh</td>
-            <td>Jan 5, 2025</td>
-            <td><button class="action-btn">Delete</button></td>
-          </tr>
-          <tr>
-            <td>Aramco</td>
-            <td>Petroleum Intern</td>
-            <td>Dhahran</td>
-            <td>Dec 20, 2024</td>
-            <td><button class="action-btn">Delete</button></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Company</th>
+              <th>Position</th>
+              <th>Location</th>
+              <th>Deadline</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>STC</td>
+              <td>Software Engineer Intern</td>
+              <td>Riyadh</td>
+              <td>Jan 5, 2025</td>
+              <td><button class="action-btn" type="button">Delete</button></td>
+            </tr>
+
+            <tr>
+              <td>Aramco</td>
+              <td>Petroleum Intern</td>
+              <td>Dhahran</td>
+              <td>Dec 20, 2024</td>
+              <td><button class="action-btn" type="button">Delete</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="admin-note">
+       
+    </section>
+  </main>
 
   <script>
     function logout() {
