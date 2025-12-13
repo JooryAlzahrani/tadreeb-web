@@ -264,6 +264,9 @@ footer {
   align-items: center;
   min-height: 100vh;
 }
+.admin.admin-login {
+  padding: 0 !important;
+}
 
 .admin-auth {
   width: 100%;
