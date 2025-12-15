@@ -26,3 +26,12 @@ CREATE TABLE IF NOT EXISTS Internship (
     application_link VARCHAR(500), -- url of application page
     deadline DATE,
 );
+
+CREATE TABLE IF NOT EXISTS contact_messages (
+id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+name VARCHAR(100) NOT NULL,
+email VARCHAR(150) NOT NULL,
+subject VARCHAR(150) NOT NULL,
+message TEXT NOT NULL,
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
