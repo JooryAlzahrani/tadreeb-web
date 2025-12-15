@@ -9,10 +9,6 @@ CREATE TABLE IF NOT EXISTS admins (
     
 );
 
-CREATE TABLE IF NOT EXISTS internships (
-    
-
-);
 
 CREATE TABLE IF NOT EXISTS Internship (
     internshipID INT AUTO_INCREMENT PRIMARY KEY, -- internship id
@@ -24,7 +20,7 @@ CREATE TABLE IF NOT EXISTS Internship (
     requirements JSON, -- to qualify
     image_url VARCHAR(500), -- company logo
     application_link VARCHAR(500), -- url of application page
-    deadline DATE,
+    deadline DATE
 );
 
 CREATE TABLE IF NOT EXISTS contact_messages (

@@ -1,3 +1,14 @@
-/*
-File for intserting sample data into database
-*/
+USE tadereeb_db;
+
+INSERT INTO Internship (title, major, location, short_description, full_description, requirements, image_url, application_link, deadline) VALUES
+('Saudi Aramco University Internship Program','Engineering, Science, Business','Dhahran','Hands-on training at Saudi Aramco for high-caliber students','Saudi Aramco offers internships to university and vocational college students allowing practical experience in engineering, business, and technical fields.','Academic enrollment, strong GPA','https://www.aramco.com/-/media/publications/career-brochure.jpg','https://www.aramco.com/en/careers/for-saudi-applicants/student-opportunities/university-and-vocational-college-internship-program','2026-02-28'),
+
+('Microsoft Internship Program (Ru’aa Program)','Computer Science, IT, Marketing','Riyadh','Microsoft structured internship program offering real project work','Microsoft’s Ru’aa internship connects interns with roles in IT, marketing, and services within Microsoft Saudi Arabia.','Enrollment in related field, proactive learner','https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg','https://microsoft.recsolu.com/external/requisitions/CpAJJGwEljwZYP2JtSlNUA','2026-03-31'),
+
+('KAUST Visiting Student Research Program','STEM Fields','Thuwal','Research internship at King Abdullah University of Science and Technology','KAUST VSRP places students with faculty on real STEM research projects, ideal for science and engineering majors.','3rd/4th year bachelor’s or masters','https://www.kaust.edu.sa/sites/default/files/files/kaust_campus1.jpg','https://admissions.kaust.edu.sa/study/internships','2026-04-30'),
+
+('Siemens Energy Marketing Internship','Business, Marketing','Dammam','Marketing internship with Siemens Energy in Dammam','Assist in communications, operations, and marketing activities at Siemens Energy focused on energy solutions and industrial clients in Saudi Arabia.','Enrollment in business/marketing major','https://upload.wikimedia.org/wikipedia/commons/0/04/Siemens_Energy_Logo.svg','https://www.siemens.com/sa/en/company/jobs','2026-05-20'),
+
+('P&G 2026 Internship Program','Business, Engineering, Marketing','Riyadh','Internship across business functions at Procter & Gamble','P&G’s internship offers experience in functional areas with mentorship and industry exposure in Saudi Arabia.','Active student, strong academic records','https://upload.wikimedia.org/wikipedia/commons/8/8e/Procter_%26_Gamble_logo.svg','https://www.pgcareers.com/global/en/job/R000138219/P-G-2026-Internship-Program-Riyadh','2026-05-15'),
+
+('BCG Riyadh Visiting Associate Internship','Business, Consulting','Riyadh','Consulting internship with Boston Consulting Group in Riyadh','BCG’s Visiting Associate program integrates interns into real consulting teams on client projects, ideal for strategy & business majors.','University student or recent grad passionate about consulting','https://upload.wikimedia.org/wikipedia/commons/5/51/BCG_logo.svg','https://careers.bcg.com/global/en/locations/saudi-arabia/visiting-associate','2026-03-15');
