@@ -1,122 +1,231 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr"> 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tadreeb - Internship Platform</title>
-    <link rel="stylesheet" href="../assets/css/homepage.css">
-     <link rel="stylesheet" href="../assets/css/global.css">
+
+   <!-- ✅ FIX: الملف عندك اسمه Tadreeb.Css مو Tadreeb.css -->
+   <link rel="stylesheet" href="Tadreeb.css">
 </head>
 <body>
-    <!-- Header Section -->
     <header>
         <nav>
             <div class="logo">
-                <h1>Tadreeb</h1>
+                <a href="#home">
+                    <img src="images/logo_tadreeb.png" alt="Tadreeb Logo" style="height: 50px; width: auto;">
+                </a>
             </div>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="internships.html">Internships</a></li>
-                <li><a href="login.html">Login / Register</a></li>
+                <li><a href="#home" data-translate-key="nav-home">Home</a></li>
+                <li><a href="internships.html" data-translate-key="nav-internships">Internships</a></li>
+                
+                <li><a href="login.html" data-translate-key="nav-login">Login</a></li>
+                <li><a href="register.html" data-translate-key="nav-register">Register</a></li>
+                
+                <li>
+                    <div id="dark-mode-toggle" class="mode-toggle-container" data-mode="light">
+                        <span class="toggle-track">
+                            <span class="toggle-slider"></span>
+                        </span>
+                        <span class="mode-text" data-mode-text-key="dark">Dark Mode</span>
+                    </div>
+                </li>
+                
+                <li>
+                    <div id="language-toggle" class="lang-toggle-container" data-lang="en">
+                        <span class="lang-text" data-translate-key="lang-en">English</span>
+                        <span class="toggle-track">
+                            <span class="toggle-slider"></span>
+                        </span>
+                        <span class="lang-text" data-translate-key="lang-ar">عربي</span>
+                    </div>
+                </li>
+                
             </ul>
         </nav>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container">
-            <h1>Welcome to Tadreeb</h1>
-            <p>The Centralized Internship Platform for Saudi University Students</p>
-            <p>Verified internship opportunities with alumni guidance</p>
-            <div class="hero-buttons">
-                <a href="#register" class="btn btn-primary">Start Your Journey</a>
-                <a href="#internships" class="btn btn-secondary">Browse Opportunities</a>
+            <div class="hero-content">
+                <h1 data-translate-key="hero-h1">Welcome to Tadreeb</h1>
+                <p data-translate-key="hero-p1">The Centralized Internship Platform for Saudi University Students</p>
+                <p data-translate-key="hero-p2">Verified internship opportunities with alumni guidance</p>
+                <div class="hero-buttons">
+                    <a href="#register" class="btn btn-primary" data-translate-key="btn-start-journey">Start Your Journey</a>
+                    <a href="#internships" class="btn btn-secondary" data-translate-key="btn-browse-opportunities">Browse Opportunities</a>
+                </div>
             </div>
+            <img src="images/mascot_laptop.png" alt="Tadreeb Mascot on Laptop" class="hero-mascot">
         </div>
     </section>
 
-    <!-- New Internships Section -->
     <section class="new-internships" id="internships">
         <div class="container">
-            <h2>Latest Internship Opportunities</h2>
+            <h2 data-translate-key="latest-h2">Latest Internship Opportunities</h2>
             <div class="internships-grid">
                 <div class="internship-card">
-                    <h3>Saudi Aramco</h3>
-                    <p>Internship in Petroleum Engineering</p>
-                    <p>Riyadh</p>
-                    <span class="deadline">Deadline: Dec 15, 2024</span>
+                    <img src="images/logo_aramco.png" alt="Saudi Aramco Logo" class="company-logo">
+                    <div class="internship-content">
+                        <h3 data-translate-key="company-aramco">Saudi Aramco</h3>
+                        <p>Internship in Petroleum Engineering</p>
+                        <p>Riyadh</p>
+                        <span class="deadline">Deadline: Jan 15, 2026</span>
+                    </div>
                 </div>
                 <div class="internship-card">
-                    <h3>Al Ahli Bank</h3>
-                    <p>Internship in Finance Sector</p>
-                    <p>Jeddah</p>
-                    <span class="deadline">Deadline: Dec 20, 2024</span>
+                    <img src="images/logo_alahli.png" alt="Al Ahli Bank Logo" class="company-logo">
+                    <div class="internship-content">
+                        <h3 data-translate-key="company-alahli">Al Ahli Bank</h3>
+                        <p>Internship in Finance Sector</p>
+                        <p>Jeddah</p>
+                        <span class="deadline">Deadline: Jan 20, 2026</span>
+                    </div>
                 </div>
                 <div class="internship-card">
-                    <h3>STC</h3>
-                    <p>Internship in Information Technology</p>
-                    <p>Riyadh</p>
-                    <span class="deadline">Deadline: Jan 10, 2025</span>
+                    <img src="images/logo_stc.png" alt="STC Logo" class="company-logo">
+                    <div class="internship-content">
+                        <h3 data-translate-key="company-stc">STC</h3>
+                        <p>Internship in Information Technology</p>
+                        <p>Riyadh</p>
+                        <span class="deadline">Deadline: Feb 10, 2026</span>
+                    </div>
                 </div>
                 <div class="internship-card">
-                    <h3>Digital Government Authority</h3>
-                    <p>Internship in Digital Transformation</p>
-                    <p>Riyadh</p>
-                    <span class="deadline">Deadline: Jan 5, 2025</span>
+                    <img src="images/logo_dga.png" alt="Digital Government Authority Logo" class="company-logo">
+                    <div class="internship-content">
+                        <h3 data-translate-key="company-dga">Digital Government Authority</h3>
+                        <p>Internship in Digital Transformation</p>
+                        <p>Riyadh</p>
+                        <span class="deadline">Deadline: Feb 5, 2026</span>
+                    </div>
                 </div>
             </div>
             <div class="view-all">
-                <a href="internships.html" class="btn-view-all">View All Opportunities</a>
+                <a href="internships.html" class="btn-view-all" data-translate-key="view-all-btn">View All Opportunities</a>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
     <section class="features">
         <div class="container">
-            <h2>Why Choose Tadreeb?</h2>
+            <h2 data-translate-key="why-h2">Why Choose Tadreeb?</h2>
             <div class="features-grid">
                 <div class="feature-item">
-                    <h3>✓ Verified Opportunities</h3>
-                    <p>All opportunities are verified by universities and companies</p>
+                    <img src="images/mascot_verified.png" alt="Verified Icon" class="feature-icon">
+                    <h3 data-translate-key="feat-1-h3">Verified Opportunities</h3>
+                    <p data-translate-key="feat-1-p">All opportunities are verified by universities and companies</p>
                 </div>
                 <div class="feature-item">
-                    <h3>✓ Deadline Reminders</h3>
-                    <p>Never miss an application deadline</p>
+                    <img src="images/mascot_reminders.png" alt="Reminders Icon" class="feature-icon">
+                    <h3 data-translate-key="feat-2-h3">Deadline Reminders</h3>
+                    <p data-translate-key="feat-2-p">Never miss an application deadline</p>
                 </div>
                 <div class="feature-item">
-                    <h3>✓ Alumni Guidance</h3>
-                    <p>Get advice from alumni who completed internships</p>
+                    <img src="images/mascot_guidance.png" alt="Guidance Icon" class="feature-icon">
+                    <h3 data-translate-key="feat-3-h3">Alumni Guidance</h3>
+                    <p data-translate-key="feat-3-p">Get advice from alumni who completed internships</p>
                 </div>
                 <div class="feature-item">
-                    <h3>✓ Personalized Recommendations</h3>
-                    <p>Opportunities tailored to your major and skills</p>
+                    <img src="images/mascot_recommendations.png" alt="Recommendations Icon" class="feature-icon">
+                    <h3 data-translate-key="feat-4-h3">Personalized Recommendations</h3>
+                    <p data-translate-key="feat-4-p">Opportunities tailored to your major and skills</p>
                 </div>
             </div>
         </div>
     </section>
 
-     <!-- Who We Are Section -->
-    <section class="who-we-are">
+    <section class="stats" id="stats">
         <div class="container">
-            <h2>Get to Know Us</h2>
+            <h2 data-translate-key="stats-h2">Tadreeb by the Numbers</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <h3>50+</h3> 
+                    <p data-translate-key="stat-1-p">Partnering Companies</p>
+                </div>
+                <div class="stat-card">
+                    <h3>10K+</h3> 
+                    <p data-translate-key="stat-2-p">Registered Students</p>
+                </div>
+                <div class="stat-card">
+                    <h3>3K+</h3> 
+                    <p data-translate-key="stat-3-p">Internship Placements</p>
+                </div>
+                <div class="stat-card">
+                    <h3>95%</h3> 
+                    <p data-translate-key="stat-4-p">Student Satisfaction Rate</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2 data-translate-key="testimonials-h2">Student Experiences</h2>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="images/mascot_testimonials.png" alt="Student Profile" class="testimonial-img"> 
+                        <div class="cite-info">
+                            <cite data-translate-key="test-1-cite">Ahmad Al-Otaibi, King Saud University</cite>
+                            <p>Petroleum Engineering</p>
+                        </div>
+                    </div>
+                    <blockquote data-translate-key="test-1-quote">
+                        <span class="quote-icon">❝</span>"Tadreeb made the search process incredibly easy. The alumni advice was the most crucial factor in my acceptance!"
+                    </blockquote>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="images/mascot_testimonials.png" alt="Student Profile" class="testimonial-img">
+                        <div class="cite-info">
+                            <cite data-translate-key="test-2-cite">Sara Al-Qahtani, Alfaisal University</cite>
+                            <p>Finance Sector</p>
+                        </div>
+                    </div>
+                    <blockquote data-translate-key="test-2-quote">
+                        <span class="quote-icon">❝</span>"The variety of opportunities and the commitment to updating deadlines ensured I never missed a chance. An excellent experience!"
+                    </blockquote>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <img src="images/mascot_testimonials.png" alt="Student Profile" class="testimonial-img">
+                        <div class="cite-info">
+                            <cite data-translate-key="test-3-cite">Faisal Al-Zahrani, KFUPM</cite>
+                            <p>Information Technology</p>
+                        </div>
+                    </div>
+                    <blockquote data-translate-key="test-3-quote">
+                         <span class="quote-icon">❝</span>"I secured my internship at a global company thanks to Tadreeb's recommendations. The most useful platform for students."
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+
+     <section class="who-we-are">
+        <div class="container">
+            <h2 data-translate-key="who-h2">Get to Know Us</h2>
             <div class="who-we-are-grid">
                 <a href="who-we-are.html" style="text-decoration: none;">
                     <div class="who-we-are-card">
-                        <h3>Who We Are Page</h3>
-                        <p>Click to know contact and know the cooliest team</p>
+                        <h3 data-translate-key="who-h3">Who We Are Page</h3>
+                        <p data-translate-key="who-p">Click to know contact and meet the coolest team</p>
                     </div>
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="footer-content">
             <div class="footer-section">
-                <h3>Tadreeb Platform</h3>
-                <p>Centralized Internship Platform for Saudi University Students</p>
+                <h3 data-translate-key="footer-h3">Tadreeb Platform</h3>
+                <p data-translate-key="footer-p">Centralized Internship Platform for Saudi University Students</p>
             </div>
             <div class="footer-section">
                 <h3>Contact Information</h3>
@@ -127,8 +236,11 @@
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 Tadreeb Platform. All rights reserved.</p>
+            <p>&copy; 2025 Tadreeb Platform. All rights reserved.</p>
         </div>
     </footer>
+
+    <script src="Tadreeb.js"></script>
 </body>
 </html>
+
