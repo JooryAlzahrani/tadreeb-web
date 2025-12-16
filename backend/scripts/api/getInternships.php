@@ -7,50 +7,37 @@ header("Content-Type: application/json");
 
 require_once __DIR__ . "/db_connection.php";
 
-/**
- * If an ID is provided → return one internship
- */
-if (isset($_GET['id'])) {
-    $id = intval($_GET['id']);
+// 💡 MOCKING START: Temporarily return sample data for testing frontend connection
+echo json_encode([
+    [
+        "id" => 101,
+        "title" => "تدريب محاكاة: تطوير ويب",
+        "major" => "Software Development",
+        "location" => "Riyadh",
+        "status" => "open",
+        "deadline" => "2026-03-01"
+    ],
+    [
+        "id" => 102,
+        "title" => "تدريب محاكاة: أمن سيبراني",
+        "major" => "Cybersecurity",
+        "location" => "Jeddah",
+        "status" => "closed",
+        "deadline" => "2026-04-15"
+    ],
+    [
+        "id" => 103,
+        "title" => "تدريب محاكاة: تعلم الآلة",
+        "major" => "Machine Learning",
+        "location" => "Riyadh",
+        "status" => "open",
+        "deadline" => "2026-05-20"
+    ]
+]);
+exit;
+// 💡 MOCKING END
 
-    $stmt = $pdo->prepare(
-        "SELECT 
-            internshipID AS id,
-            title,
-            major,
-            location,
-            short_description,
-            full_description,
-            requirements,
-            image_url,
-            application_link,
-            deadline
-         FROM Internship
-         WHERE internshipID = ?"
-    );
-
-    $stmt->execute([$id]);
-    echo json_encode($stmt->fetch() ?: []);
-    exit;
-}
-
-/**
- * No ID → return ALL internships
- */
-$stmt = $pdo->query(
-    "SELECT 
-        internshipID AS id,
-        title,
-        major,
-        location,
-        short_description,
-        full_description,
-        requirements,
-        image_url,
-        application_link,
-        deadline
-     FROM Internship
-     ORDER BY deadline ASC"
-);
-
-echo json_encode($stmt->fetchAll());
+// Fallback if not mocking
+http_response_code(404);
+echo json_encode(["error" => "No data found."]);
+?>
