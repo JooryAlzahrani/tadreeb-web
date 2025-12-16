@@ -110,3 +110,4 @@ document.addEventListener('DOMContentLoaded', () => {
   setLanguage(localStorage.getItem('language') || 'en');
   updateDarkModeIcon(body.classList.contains('dark-mode'));
 });
+
