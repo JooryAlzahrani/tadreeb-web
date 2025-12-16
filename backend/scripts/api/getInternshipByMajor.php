@@ -8,23 +8,36 @@ header("Content-Type: application/json");
 require_once __DIR__ . "/db_connection.php";
 
 /**
- * Validate input
+ * If an ID is provided → return one internship
  */
-if (!isset($_GET['major']) || empty(trim($_GET['major']))) {
-    http_response_code(400);
-    echo json_encode([
-        "error" => "Major parameter is required"
-    ]);
+if (isset($_GET['id'])) {
+    $id = intval($_GET['id']);
+
+    $stmt = $pdo->prepare(
+        "SELECT 
+            internshipID AS id,
+            title,
+            major,
+            location,
+            short_description,
+            full_description,
+            requirements,
+            image_url,
+            application_link,
+            deadline
+         FROM Internship
+         WHERE internshipID = ?"
+    );
+
+    $stmt->execute([$id]);
+    echo json_encode($stmt->fetch() ?: []);
     exit;
 }
 
-$major = trim($_GET['major']);
-
 /**
- * Query internships by major
- * Using LIKE because majors are stored as text ( "Computer Science, IT")
+ * No ID → return ALL internships
  */
-$stmt = $pdo->prepare(
+$stmt = $pdo->query(
     "SELECT 
         internshipID AS id,
         title,
@@ -37,12 +50,8 @@ $stmt = $pdo->prepare(
         application_link,
         deadline
      FROM Internship
-     WHERE major LIKE ?
      ORDER BY deadline ASC"
 );
 
-$stmt->execute(["%$major%"]);
-
-$results = $stmt->fetchAll();
-
-echo json_encode($results);
+echo json_encode($stmt->fetchAll());
+?>
