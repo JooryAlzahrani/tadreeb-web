@@ -1,53 +1,240 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr"> 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tadreeb | Login</title>
-
-  <link rel="stylesheet" href="loginandregister.css" />
-  <script src="loginandregister.js" defer></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Internship Opportunities - Tadreeb</title>
+  <link rel="stylesheet" href="Tadreeb.Css">
 </head>
 
-<body class="auth-page">
+<body>
 
-  <div class="floating-ui-bar">
-    <div class="auth-logo">
-      <a href="homepage.html">
-        <img src="images/logo_tadreeb.png" alt="Tadreeb Logo">
-      </a>
-    </div>
+  <header>
+    <nav>
+      <div class="logo">
+        <a href="homepage.html">
+            <img src="images/logo_tadreeb.png" alt="Tadreeb Logo" style="height: 50px; width: auto;">
+        </a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="homepage.html" data-translate-key="nav-home">Home</a></li>
+        <li><a href="internships.html" class="active" data-translate-key="nav-internships">Internships</a></li>
+        
+        <li><a href="login.html" data-translate-key="nav-login">Login</a></li>
+        <li><a href="register.html" data-translate-key="nav-register">Register</a></li>
+        
+        <li>
+            <div id="dark-mode-toggle" class="mode-toggle-container" data-mode="light">
+                <span class="toggle-track">
+                    <span class="toggle-slider"></span>
+                </span>
+                <span class="mode-text">Dark Mode</span>
+            </div>
+        </li>
+        
+        <li>
+            <div id="language-toggle" class="lang-toggle-container" data-lang="en">
+                <span class="lang-text" data-translate-key="lang-en">English</span>
+                <span class="toggle-track">
+                    <span class="toggle-slider"></span>
+                </span>
+                <span class="lang-text" data-translate-key="lang-ar">عربي</span>
+            </div>
+        </li>
+      </ul>
+    </nav>
+  </header>
 
-    <div class="header-toggles">
-      <div id="dark-mode-toggle" class="mode-toggle-container" data-mode="light"></div>
-      <div id="language-toggle" class="lang-toggle-container" data-lang="en"></div>
-    </div>
-  </div>
+  <section class="all-internships">
+    <div class="container">
+      <h2 data-translate-key="all-internships-h2">All Internship Opportunities</h2>
 
-  <div class="auth-container">
-    <div class="auth-mascot">
-      <img src="images/mascot_auth.png" alt="Tadreeb Login Mascot">
-    </div>
+      <div class="filters">
+        <select id="locationFilter" onchange="filterInternships()">
+          <option value="all" data-translate-key="filter-location">All Locations</option>
+          <option value="Riyadh" data-translate-key="option-riyadh">Riyadh</option>
+          <option value="Jeddah" data-translate-key="option-jeddah">Jeddah</option>
+          <option value="Dhahran" data-translate-key="option-dhahran">Dhahran</option>
+        </select>
 
-    <h2 data-translate-key="login-h2">Login</h2>
+        <select id="majorFilter" onchange="filterInternships()">
+          <option value="all" data-translate-key="filter-major">All Majors</option>
+          <option value="Software Development" data-translate-key="option-software">Software Development</option>
+          <option value="Cybersecurity" data-translate-key="option-cyber">Cybersecurity</option>
+          <option value="Machine Learning" data-translate-key="option-ml">Machine Learning</option>
+          <option value="Information Technology" data-translate-key="option-it">Information Technology</option>
+        </select>
 
-    <form action="#" method="post">
-      <input type="email" name="email" data-translate-key="ph-email-auth" placeholder="Enter your email" required>
-
-      <div class="password-wrapper">
-        <input type="password" name="password" data-translate-key="ph-password-auth" placeholder="Password" required>
-        <span class="password-toggle" data-state="show" onclick="togglePassword(this)" data-translate-key="btn-show">Show</span>
+        <select id="statusFilter" onchange="filterInternships()">
+          <option value="all" data-translate-key="filter-status">All Statuses</option>
+          <option value="open" data-translate-key="option-open">Open</option>
+          <option value="closed" data-translate-key="option-closed">Closed</option>
+        </select>
       </div>
 
-      <button type="submit" data-translate-key="btn-login">Login</button>
-    </form>
+      <div class="internships-grid">
+        <div class="internship-card" 
+             data-title="KPMG"
+             data-major="Software Development"
+             data-status="open"
+             data-description="Great internship in Software Development. Gain hands-on experience with cloud technologies and agile projects."
+             data-location="Riyadh"
+             data-deadline="Jan 25, 2026"
+             data-link="https://home.kpmg/sa/en/home/careers.html"
+             data-logo="images/logo_kpmg.png">
+          <img src="images/logo_kpmg.png" alt="KPMG Logo" class="company-logo">
+          <div class="card-content">
+              <h3>KPMG</h3>
+              <p>Internship in Software Development</p>
+              <p>Riyadh</p>
+              <span class="deadline">Deadline: Jan 25, 2026</span>
+              <div class="card-actions">
+                <button class="btn btn-apply" onclick="openApplyModal()" data-translate-key="btn-apply">Apply Now</button>
+                <a href="https://home.kpmg/sa/en/home/careers.html" target="_blank" class="btn btn-website" data-translate-key="btn-website">Go to Website</a>
+              </div>
+          </div>
+        </div>
 
-    <p>
-      <span data-translate-key="link-no-account">Don’t have an account?</span>
-      <a href="register.html" data-translate-key="link-register">Register</a>
-    </p>
+        <div class="internship-card" 
+             data-title="P&G"
+             data-major="Cybersecurity"
+             data-status="closed"
+             data-description="Cybersecurity internship opportunity at P&G. Work on real-world security challenges and projects."
+             data-location="Jeddah"
+             data-deadline="Jan 20, 2026"
+             data-link="https://www.pgcareers.com/"
+             data-logo="images/logo_pg.png">
+          <img src="images/logo_pg.png" alt="P&G Logo" class="company-logo">
+          <div class="card-content">
+              <h3>P&G</h3>
+              <p>Internship in Cybersecurity</p>
+              <p>Jeddah</p>
+              <span class="deadline">Deadline: Jan 20, 2026</span>
+              <div class="card-actions">
+                <button class="btn btn-apply" onclick="openApplyModal()" data-translate-key="btn-apply">Apply Now</button>
+                <a href="https://www.pgcareers.com/" target="_blank" class="btn btn-website" data-translate-key="btn-website">Go to Website</a>
+              </div>
+          </div>
+        </div>
+
+        <div class="internship-card" 
+             data-title="PwC"
+             data-major="Machine Learning"
+             data-status="open"
+             data-description="Machine Learning internship. Learn from top experts and apply ML techniques in real business scenarios."
+             data-location="Riyadh"
+             data-deadline="Feb 1, 2026"
+             data-link="https://www.pwc.com/"
+             data-logo="images/logo_pwc.png">
+          <img src="images/logo_pwc.png" alt="PwC Logo" class="company-logo">
+          <div class="card-content">
+              <h3>PwC</h3>
+              <p>Internship in Machine Learning</p>
+              <p>Riyadh</p>
+              <span class="deadline">Deadline: Feb 1, 2026</span>
+              <div class="card-actions">
+                <button class="btn btn-apply" onclick="openApplyModal()" data-translate-key="btn-apply">Apply Now</button>
+                <a href="https://www.pwc.com/" target="_blank" class="btn btn-website" data-translate-key="btn-website">Go to Website</a>
+              </div>
+          </div>
+        </div>
+
+        <div class="internship-card" 
+             data-title="Aramco"
+             data-major="Information Technology"
+             data-status="closed"
+             data-description="IT Co-operative training available for current university students."
+             data-location="Dhahran"
+             data-deadline="Oct 20, 2026"
+             data-link="https://www.aramco.com/en/careers/for-saudi-applicants/student-opportunities/university-and-vocational-college-internship-programs/university-internship-program"
+             data-logo="images/logo_aramco.png">
+          <img src="images/logo_aramco.png" alt="Aramco Logo" class="company-logo">
+          <div class="card-content">
+              <h3>Aramco</h3>
+              <p>Internship in Information Technology</p>
+              <p>Dhahran</p>
+              <span class="deadline">Deadline: Oct 20, 2026</span>
+              <div class="card-actions">
+                <button class="btn btn-apply" onclick="openApplyModal()" data-translate-key="btn-apply">Apply Now</button>
+                <a href="https://www.aramco.com/en/careers/for-saudi-applicants/student-opportunities/university-and-vocational-college-internship-programs/university-internship-program" target="_blank" class="btn btn-website" data-translate-key="btn-website">Go to Website</a>
+              </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="view-all" style="margin-top: 4rem;">
+        <a href="reviews.html" class="btn-view-all" data-translate-key="btn-view-all-reviews">
+            <img src="images/mascot_reviews.png" alt="Tadreeb Mascot Review Icon" class="review-mascot-icon">
+            <span class="review-text" data-translate-key="btn-view-all-reviews">إذا حاب تشوف المراجعات اضغط هنا!</span>
+        </a>
+      </div>
+      
+
+    </div>
+  </section>
+
+  <div id="applyModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeApplyModal()">&times;</span>
+        <h2 data-translate-key="apply-h2">Application Form</h2>
+        <form id="applicationForm">
+            <input type="text" id="fullName" data-translate-key="ph-full-name" placeholder="Full Name (الاسم الكامل)" required>
+            <input type="email" id="email" data-translate-key="ph-email" placeholder="Email (البريد)" required>
+            <input type="url" id="linkedin" data-translate-key="ph-linkedin" placeholder="LinkedIn Profile (حساب لنكدان)" required>
+
+            <input type="text" id="university" data-translate-key="ph-university" placeholder="University Name (اسم الجامعة)" required>
+            <input type="text" id="major" data-translate-key="ph-major" placeholder="Major (التخصص)" required>
+            <input type="text" id="studentID" data-translate-key="ph-student-id" placeholder="Student ID (الرقم الجامعي)" required>
+            
+            <input type="text" id="academicLevel" data-translate-key="ph-level" placeholder="Academic Level (المستوى الدراسي)" required>
+            <input type="number" id="passedHours" data-translate-key="ph-hours" placeholder="Passed Credit Hours (الساعات المجتازة)" min="1" required>
+            
+            <div class="gpa-selection-group">
+                <label for="gpaBasis" data-translate-key="ph-gpa-basis">GPA Basis</label>
+                <select id="gpaBasis" required>
+                    <option value="" disabled selected data-translate-key="option-select-basis">Select Basis</option>
+                    <option value="4.0" data-translate-key="option-basis-4">Out of 4.0</option>
+                    <option value="5.0" data-translate-key="option-basis-5">Out of 5.0</option>
+                </select>
+                <input type="number" id="gpa" data-translate-key="ph-gpa" placeholder="GPA Value" step="0.01" min="0" max="5" required>
+            </div>
+            
+            <textarea id="selfDefinition" data-translate-key="ph-self-def" placeholder="Brief self-definition (اختياري)" rows="3"></textarea>
+
+            <label for="cvFile" data-translate-key="upload-cv">Upload CV (السيرة الذاتية) - Required</label>
+            <input type="file" id="cvFile" accept=".pdf,.doc,.docx" required>
+            
+            <label for="transcriptFile" data-translate-key="upload-transcript">Upload Transcript (السجل الأكاديمي) - Required</label>
+            <input type="file" id="transcriptFile" accept=".pdf,.doc,.docx" required>
+
+            <label for="profilePicture" data-translate-key="upload-pic">Profile Picture (صورة شخصية) - Optional</label>
+            <input type="file" id="profilePicture" accept="image/*">
+
+            <button type="submit" class="btn-primary" data-translate-key="btn-submit-app">Submit Application</button>
+        </form>
+    </div>
   </div>
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3 data-translate-key="footer-h3">Tadreeb Platform</h3>
+        <p data-translate-key="footer-p">Centralized Internship Platform for Saudi University Students</p>
+      </div>
+      <div class="footer-section">
+        <h3>Contact Information</h3>
+        <ul>
+          <li>Email: info@tadreeb.com</li>
+          <li>Phone: 0112345678</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Tadreeb Platform. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="Tadreeb.js"></script>
 
 </body>
 </html>
-
