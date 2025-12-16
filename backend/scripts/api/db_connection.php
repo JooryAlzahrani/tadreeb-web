@@ -1,11 +1,12 @@
 <?php
+// db_connection.php
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
 $host = "localhost";
-$db   = "tadreeb_db";
-$user = "root";
-$pass = "";
+$db   = "tadreeb_db"; // تأكدي من أن اسم قاعدة البيانات في XAMPP هو 'tadreeb_db'
+$user = "root";       // اسم المستخدم الافتراضي لـ XAMPP
+$pass = "";           // كلمة المرور الافتراضية لـ XAMPP (عادة فارغة)
 
 try {
     $pdo = new PDO(
@@ -25,3 +26,4 @@ try {
     ]);
     exit;
 }
+?>
