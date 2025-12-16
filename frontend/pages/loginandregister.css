@@ -36,7 +36,7 @@ body.auth-page {
   color: var(--text-color);
   scroll-behavior: smooth;
 
-  background-image: url("images/auth_bg.gif");
+  background-image: url("auth_bg.gif");
   background-position: center;
   background-size: cover;
   min-height: 100vh;
