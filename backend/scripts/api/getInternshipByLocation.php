@@ -82,3 +82,4 @@ $stmt = $pdo->query(
 );
 
 echo json_encode($stmt->fetchAll());
+?>
