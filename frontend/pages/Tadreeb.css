@@ -223,7 +223,7 @@ h2 {
 .hero {
   background: 
     linear-gradient(to bottom, rgba(17, 48, 110, 0.9) 0%, rgba(23, 66, 125, 0.9) 100%), 
-    url("images/hero_bg.gif") center/cover no-repeat; 
+    url("hero_bg.gif") center/cover no-repeat; 
   background-size: cover;
   color: #F4F5F6;
   text-align: left; 
