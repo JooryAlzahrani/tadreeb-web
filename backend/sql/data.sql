@@ -12,3 +12,7 @@ INSERT INTO Internship (title, major, location, short_description, full_descript
 ('P&G 2026 Internship Program','Business, Engineering, Marketing','Riyadh','Internship across business functions at Procter & Gamble','P&G’s internship offers experience in functional areas with mentorship and industry exposure in Saudi Arabia.','Active student, strong academic records','https://upload.wikimedia.org/wikipedia/commons/8/8e/Procter_%26_Gamble_logo.svg','https://www.pgcareers.com/global/en/job/R000138219/P-G-2026-Internship-Program-Riyadh','2026-05-15'),
 
 ('BCG Riyadh Visiting Associate Internship','Business, Consulting','Riyadh','Consulting internship with Boston Consulting Group in Riyadh','BCG’s Visiting Associate program integrates interns into real consulting teams on client projects, ideal for strategy & business majors.','University student or recent grad passionate about consulting','https://upload.wikimedia.org/wikipedia/commons/5/51/BCG_logo.svg','https://careers.bcg.com/global/en/locations/saudi-arabia/visiting-associate','2026-03-15');
+
+
+INSERT INTO admins (username, email, password) VALUES
+('admin', 'admin@tadreeb.com', 'admin123');
