@@ -3,7 +3,12 @@ USE tadreeb_db;
 
 CREATE TABLE IF NOT EXISTS users (
     
+    user_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(150),
+    email VARCHAR(150)
 );
+
+
 
 CREATE TABLE IF NOT EXISTS admins (
     
