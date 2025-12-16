@@ -1,66 +1,105 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us - Tadreeb</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us - Tadreeb</title>
+  <link rel="stylesheet" href="Tadreeb.Css" />
 </head>
+
 <body>
-    <header>
-    <nav>
-        <div class="logo">
-                <h1>Tadreeb - Contact Us</h1>
-            </div>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="who-we-are.html">Who We Are</a></li>
-            <li><a href="developers.html">Meet the Developers</a></li>
-        </ul>
-    </nav>
+<header>
+  <nav>
+    <div class="logo">
+      <a href="homepage.html">
+        <img src="images/logo_tadreeb.png" alt="Tadreeb Logo" style="height:50px;width:auto;">
+      </a>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="homepage.html" data-translate-key="nav-home">Home</a></li>
+      <li><a href="internships.html" data-translate-key="nav-internships">Internships</a></li>
+      <li><a href="who-we-are.html" data-translate-key="nav-about">Who We Are</a></li>
+      <li><a href="contact-us.html" data-translate-key="nav-contact">Contact Us</a></li>
+      <li><a href="login.html" data-translate-key="nav-login">Login</a></li>
+      <li><a href="register.html" data-translate-key="nav-register">Register</a></li>
+
+      <li>
+        <a href="admin-login.html" class="admin-link">
+          <span class="admin-icon">👤</span>
+          <span data-translate-key="nav-admin">Admin</span>
+        </a>
+      </li>
+
+      <li>
+        <div id="dark-mode-toggle" class="mode-toggle-container" data-mode="light">
+          <span class="toggle-track">
+            <span class="toggle-slider"></span>
+          </span>
+          <span class="mode-text" data-translate-key="mode-text">Dark Mode</span>
+        </div>
+      </li>
+
+      <li>
+        <div id="language-toggle" class="lang-toggle-container" data-lang="en">
+          <span class="lang-text" data-translate-key="lang-en">English</span>
+          <span class="toggle-track">
+            <span class="toggle-slider"></span>
+          </span>
+          <span class="lang-text" data-translate-key="lang-ar">عربي</span>
+        </div>
+      </li>
+    </ul>
+  </nav>
 </header>
 
-    <main class="contact-page-main">
-        <div class="card">
-            <h2>Send Us a Message</h2>
-            <p>We are here to help and answer your inquiries.</p>
+<section class="contact-page">
+  <div class="container">
+    <h2>Contact Us</h2>
+    <p class="page-subtitle">All contacts below are demo (fake) for the project.</p>
 
-            <form action="#" method="POST">
-                
-                <div class="double-field">
-                    <div class="form-group">
-                        <label for="name">Full Name:</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <h3>Direct Contact</h3>
+        <ul class="info-list">
+          <li>Email: info@tadreeb.com</li>
+          <li>Phone: 0112345678</li>
+          <li>Working Hours: Sun–Thu, 9AM–5PM</li>
+        </ul>
+      </div>
 
-                    <div class="form-group">
-                        <label for="email">Email Address:</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                </div>
-                
-                <div class="double-field">
-                    <div class="form-group">
-                        <label for="subject">Subject:</label>
-                        <input type="text" id="subject" name="subject">
-                    </div>
+      <div class="contact-card">
+        <h3>Social Media</h3>
+        <ul class="info-list">
+          <li>Twitter/X: @Tadreeb_SA</li>
+          <li>Instagram: @Tadreeb.sa</li>
+          <li>LinkedIn: Tadreeb Platform</li>
+        </ul>
+      </div>
+    </div>
 
-                    <div class="form-group message-field">
-                        <label for="message">Your Message:</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
-                    </div>
-                </div>
-                
+  </div>
+</section>
 
-                <button type="submit">Send Message</button>
-            </form>
-        </div>
-                <div style="text-align: center; margin-top: 2rem;">
-                    <a href="who-we-are.html" class="btn back-button">← Back to Who We Are</a>
-                </div>
-    </main>
+<footer>
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>Tadreeb Platform</h3>
+      <p>Centralized Internship Platform for Saudi University Students</p>
+    </div>
+    <div class="footer-section">
+      <h3>Contact Information</h3>
+      <ul>
+        <li>Email: info@tadreeb.com</li>
+        <li>Phone: 0112345678</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Tadreeb Platform. All rights reserved.</p>
+  </div>
+</footer>
 
-    <footer>
-        <p>&copy; 2025 Tadreeb. All rights reserved.</p>
-    </footer>
+<script src="Tadreeb.js"></script>
 </body>
 </html>

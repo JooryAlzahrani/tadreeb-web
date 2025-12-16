@@ -6,45 +6,75 @@
     <title>Tadreeb - Internship Platform</title>
 
    <!-- ✅ FIX: الملف عندك اسمه Tadreeb.Css مو Tadreeb.css -->
-   <link rel="stylesheet" href="Tadreeb.css">
+   <link rel="stylesheet" href="Tadreeb.Css">
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">
-                <a href="#home">
-                    <img src="images/logo_tadreeb.png" alt="Tadreeb Logo" style="height: 50px; width: auto;">
-                </a>
-            </div>
-            <ul class="nav-links">
-                <li><a href="#home" data-translate-key="nav-home">Home</a></li>
-                <li><a href="internships.html" data-translate-key="nav-internships">Internships</a></li>
-                
-                <li><a href="login.html" data-translate-key="nav-login">Login</a></li>
-                <li><a href="register.html" data-translate-key="nav-register">Register</a></li>
-                
-                <li>
-                    <div id="dark-mode-toggle" class="mode-toggle-container" data-mode="light">
-                        <span class="toggle-track">
-                            <span class="toggle-slider"></span>
-                        </span>
-                        <span class="mode-text" data-mode-text-key="dark">Dark Mode</span>
-                    </div>
-                </li>
-                
-                <li>
-                    <div id="language-toggle" class="lang-toggle-container" data-lang="en">
-                        <span class="lang-text" data-translate-key="lang-en">English</span>
-                        <span class="toggle-track">
-                            <span class="toggle-slider"></span>
-                        </span>
-                        <span class="lang-text" data-translate-key="lang-ar">عربي</span>
-                    </div>
-                </li>
-                
-            </ul>
-        </nav>
-    </header>
+   <header>
+  <nav>
+    <div class="logo">
+      <a href="homepage.html">
+        <img src="images/logo_tadreeb.png" alt="Tadreeb Logo" style="height:50px;width:auto;">
+      </a>
+    </div>
+
+    <ul class="nav-links">
+      <li>
+        <a href="homepage.html" data-translate-key="nav-home">Home</a>
+      </li>
+
+      <li>
+        <a href="internships.html" data-translate-key="nav-internships">Internships</a>
+      </li>
+
+      <li>
+        <a href="who-we-are.html" data-translate-key="nav-about">Who We Are</a>
+      </li>
+
+      <li>
+        <a href="contact-us.html" data-translate-key="nav-contact">Contact Us</a>
+      </li>
+
+      <li>
+        <a href="login.html" data-translate-key="nav-login">Login</a>
+      </li>
+
+      <li>
+        <a href="register.html" data-translate-key="nav-register">Register</a>
+      </li>
+
+      <!-- Admin -->
+      <li>
+        <a href="admin-login.html" class="admin-link">
+          <span class="admin-icon">👤</span>
+          <span data-translate-key="nav-admin">Admin</span>
+        </a>
+      </li>
+
+      <!-- Dark mode -->
+      <li>
+        <div id="dark-mode-toggle" class="mode-toggle-container" data-mode="light">
+          <span class="toggle-track">
+            <span class="toggle-slider"></span>
+          </span>
+          <span class="mode-text" data-translate-key="mode-text">Dark Mode</span>
+        </div>
+      </li>
+
+      <!-- Language -->
+      <li>
+        <div id="language-toggle" class="lang-toggle-container" data-lang="en">
+          <span class="lang-text" data-translate-key="lang-en">English</span>
+          <span class="toggle-track">
+            <span class="toggle-slider"></span>
+          </span>
+          <span class="lang-text" data-translate-key="lang-ar">عربي</span>
+        </div>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+
 
     <section class="hero" id="home">
         <div class="container">
@@ -243,4 +273,3 @@
     <script src="Tadreeb.js"></script>
 </body>
 </html>
-
