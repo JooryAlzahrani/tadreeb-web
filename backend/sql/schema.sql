@@ -5,8 +5,10 @@ CREATE TABLE IF NOT EXISTS users (
     
     user_id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(150),
-    email VARCHAR(150)
-);
+    email VARCHAR(150),
+    password_hash VARCHAR(255) NOT NULL,
+    CONSTRAINT FK_SavedInternship FOREIGN KEY (internshipID) REFERNECES Internship(internshipID) -- for saved internships
+);  
 
 
 
@@ -39,5 +41,6 @@ name VARCHAR(100) NOT NULL,
 email VARCHAR(150) NOT NULL,
 subject VARCHAR(150) NOT NULL,
 message TEXT NOT NULL,
-created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+CONSTRAINT FK_UserContact FOREIGN KEY (userID) REFERENCES users(userID)
+); 
