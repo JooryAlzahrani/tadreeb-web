@@ -1,98 +1,337 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Admin Dashboard - Tadreeb</title>
-
-  
-  <link rel="stylesheet" href="../../assets/css/global.css" />
+  <link rel="stylesheet" href="Tadreeb.Css" />
 </head>
 
-<body class="admin admin-dashboard">
-  <header class="admin-header">
-    <div class="admin-header-inner">
-      <div>
-        <h1 class="admin-title">Tadreeb Admin</h1>
-        <p class="admin-subtitle">Control Panel</p>
+<body>
+
+  <!-- نفس الهيدر حق الموقع + اللوقو + التوجلز -->
+  <header>
+    <nav>
+      <div class="logo">
+        <a href="homepage.html">
+          <img src="images/logo_tadreeb.png" alt="Tadreeb Logo">
+        </a>
       </div>
 
-      <div class="admin-header-actions">
-       <a class="admin-link" href="../homepage.html">View Website</a>
-        <button class="logout-btn" onclick="logout()">Logout</button>
-      </div>
-    </div>
+      <ul class="nav-links">
+        <li><a href="homepage.html" data-translate-key="nav-home">Home</a></li>
+        <li><a href="internships.html" data-translate-key="nav-internships">Internships</a></li>
+        <li><a href="reviews.html" data-translate-key="nav-reviews">Reviews</a></li>
+
+        <li>
+          <a href="admin-login.html" class="admin-link active">
+            <span class="admin-icon">👤</span>
+            <span data-translate-key="nav-admin">Admin</span>
+          </a>
+        </li>
+
+        <li>
+          <div id="dark-mode-toggle" class="mode-toggle-container" data-mode="light">
+            <span class="toggle-track"><span class="toggle-slider"></span></span>
+            <span class="mode-text" data-translate-key="mode-text">Dark Mode</span>
+          </div>
+        </li>
+
+              </ul>
+    </nav>
   </header>
 
-  <main class="dashboard-container">
-    <h2>Quick Actions</h2>
+  <main class="admin-db-page">
+    <div class="container">
 
-    <section class="card-grid">
-      <div class="dashboard-card" onclick="alert('Feature coming soon!')">
-        <h3>Manage Internships</h3>
-        <p>Add, update, or delete internship postings.</p>
+      <!-- Header -->
+      <div class="admin-db-hero">
+        <div class="admin-db-hero-left">
+          <span class="admin-db-badge">ADMIN PANEL</span>
+          <h2 class="admin-db-title" data-translate-key="admin-dashboard-title">Admin Dashboard</h2>
+          <p class="admin-db-sub" data-translate-key="admin-dashboard-sub">
+            Daily / Weekly / Monthly analytics overview.
+          </p>
+        </div>
+
+        <div class="admin-db-hero-right">
+          <div class="admin-db-chip">
+            <span class="admin-db-dot"></span>
+            <span data-translate-key="admin-live">Live Demo</span>
+          </div>
+          <div class="admin-db-date" id="adminDbDate">—</div>
+        </div>
       </div>
 
-      <div class="dashboard-card" onclick="alert('Feature coming soon!')">
-        <h3>Manage Reviews</h3>
-        <p>Monitor and approve student reviews.</p>
-      </div>
+      <!-- Daily -->
+      <section class="admin-db-section">
+        <div class="admin-db-section-head">
+          <h3 data-translate-key="admin-daily">Daily Statistics</h3>
+          <p data-translate-key="admin-daily-desc">Today’s key numbers and quick trend.</p>
+        </div>
 
-      <div class="dashboard-card" onclick="alert('Feature coming soon!')">
-        <h3>Manage Users</h3>
-        <p>View or remove inactive student accounts.</p>
-      </div>
+        <div class="admin-db-kpis">
+          <div class="admin-db-kpi">
+            <div class="admin-db-kpi-top">
+              <span class="admin-db-kpi-label" data-translate-key="admin-daily-registered">Registered today</span>
+              <span class="admin-db-kpi-pill up">+12%</span>
+            </div>
+            <div class="admin-db-kpi-value" id="kpiDailyReg">42</div>
+            <div class="admin-db-spark">
+              <span class="bar" style="height:40%"></span>
+              <span class="bar" style="height:52%"></span>
+              <span class="bar" style="height:45%"></span>
+              <span class="bar" style="height:60%"></span>
+              <span class="bar" style="height:72%"></span>
+              <span class="bar" style="height:66%"></span>
+              <span class="bar" style="height:78%"></span>
+            </div>
+          </div>
 
-      <div class="dashboard-card" onclick="alert('Feature coming soon!')">
-        <h3>View Reports</h3>
-        <p>Track application numbers and acceptance rates.</p>
-      </div>
-    </section>
+          <div class="admin-db-kpi">
+            <div class="admin-db-kpi-top">
+              <span class="admin-db-kpi-label" data-translate-key="admin-daily-companies">Companies</span>
+              <span class="admin-db-kpi-pill neutral">stable</span>
+            </div>
+            <div class="admin-db-kpi-value" id="kpiDailyCompanies">18</div>
+            <div class="admin-db-mini-table">
+              <div class="row"><span>Open listings</span><b>11</b></div>
+              <div class="row"><span>Closed</span><b>7</b></div>
+            </div>
+          </div>
 
-    <section class="table-container">
-      <h2>Recent Internship Submissions</h2>
+          <div class="admin-db-kpi">
+            <div class="admin-db-kpi-top">
+              <span class="admin-db-kpi-label" data-translate-key="admin-daily-matched">Signed today</span>
+              <span class="admin-db-kpi-pill down">-3%</span>
+            </div>
+            <div class="admin-db-kpi-value" id="kpiDailySigned">9</div>
+            <div class="admin-db-progress">
+              <div class="admin-db-progress-top">
+                <span data-translate-key="admin-daily-conv">Conversion</span>
+                <b>21%</b>
+              </div>
+              <div class="admin-db-progress-track">
+                <div class="admin-db-progress-fill" style="width:21%"></div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>Company</th>
-              <th>Position</th>
-              <th>Location</th>
-              <th>Deadline</th>
-              <th>Action</th>
-            </tr>
-          </thead>
+        <div class="admin-db-panels">
+          <div class="admin-db-panel">
+            <div class="admin-db-panel-head">
+              <h4 data-translate-key="admin-daily-chart">Today activity</h4>
+              <span class="admin-db-panel-note">Last 8 hours</span>
+            </div>
 
-          <tbody>
-            <tr>
-              <td>STC</td>
-              <td>Software Engineer Intern</td>
-              <td>Riyadh</td>
-              <td>Jan 5, 2025</td>
-              <td><button class="action-btn" type="button">Delete</button></td>
-            </tr>
+            <!-- Simple SVG line chart (no libs) -->
+            <div class="admin-db-chart">
+              <svg viewBox="0 0 520 140" preserveAspectRatio="none" aria-label="Line chart">
+                <polyline class="grid" points="0,20 520,20" />
+                <polyline class="grid" points="0,60 520,60" />
+                <polyline class="grid" points="0,100 520,100" />
+                <polyline class="line" points="10,110 80,90 150,95 220,70 290,75 360,55 430,62 500,40" />
+                <circle class="dot" cx="500" cy="40" r="4"></circle>
+              </svg>
+            </div>
 
-            <tr>
-              <td>Aramco</td>
-              <td>Petroleum Intern</td>
-              <td>Dhahran</td>
-              <td>Dec 20, 2024</td>
-              <td><button class="action-btn" type="button">Delete</button></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+            <div class="admin-db-legend">
+              <span><i class="lg lg-a"></i> Registrations</span>
+              <span><i class="lg lg-b"></i> Signed</span>
+            </div>
+          </div>
 
-      <p class="admin-note">
-       
-    </section>
+          <div class="admin-db-panel">
+            <div class="admin-db-panel-head">
+              <h4 data-translate-key="admin-daily-table">Top organizations today</h4>
+              <span class="admin-db-panel-note">Demo</span>
+            </div>
+
+            <div class="admin-db-table">
+              <div class="thead">
+                <span data-translate-key="th-org">Organization</span>
+                <span data-translate-key="th-apps">Applications</span>
+                <span data-translate-key="th-signed">Signed</span>
+              </div>
+              <div class="trow">
+                <span>STC</span><b>18</b><b>4</b>
+              </div>
+              <div class="trow">
+                <span>Aramco</span><b>13</b><b>3</b>
+              </div>
+              <div class="trow">
+                <span>P&amp;G</span><b>9</b><b>2</b>
+              </div>
+              <div class="trow">
+                <span>KPMG</span><b>7</b><b>0</b>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Weekly -->
+      <section class="admin-db-section">
+        <div class="admin-db-section-head">
+          <h3 data-translate-key="admin-weekly">Weekly Statistics</h3>
+          <p data-translate-key="admin-weekly-desc">More accurate trends (last 7 days).</p>
+        </div>
+
+        <div class="admin-db-panels">
+          <div class="admin-db-panel">
+            <div class="admin-db-panel-head">
+              <h4 data-translate-key="admin-weekly-bars">Weekly breakdown</h4>
+              <span class="admin-db-panel-note">7 days</span>
+            </div>
+
+            <div class="admin-db-bars">
+              <div class="bar-row">
+                <span data-translate-key="bar-registrations">Registrations</span>
+                <div class="track"><div class="fill" style="width:72%"></div></div>
+                <b>210</b>
+              </div>
+              <div class="bar-row">
+                <span data-translate-key="bar-companies">New companies</span>
+                <div class="track"><div class="fill" style="width:38%"></div></div>
+                <b>6</b>
+              </div>
+              <div class="bar-row">
+                <span data-translate-key="bar-apps">Applications</span>
+                <div class="track"><div class="fill" style="width:64%"></div></div>
+                <b>134</b>
+              </div>
+              <div class="bar-row">
+                <span data-translate-key="bar-signed">Signed</span>
+                <div class="track"><div class="fill" style="width:46%"></div></div>
+                <b>41</b>
+              </div>
+            </div>
+          </div>
+
+          <div class="admin-db-panel">
+            <div class="admin-db-panel-head">
+              <h4 data-translate-key="admin-weekly-summary">Weekly summary</h4>
+              <span class="admin-db-panel-note">Demo</span>
+            </div>
+
+            <div class="admin-db-table compact">
+              <div class="thead">
+                <span data-translate-key="th-metric">Metric</span>
+                <span data-translate-key="th-value">Value</span>
+                <span data-translate-key="th-change">Change</span>
+              </div>
+              <div class="trow">
+                <span>Avg. daily registrations</span><b>30</b><b class="chg up">+6%</b>
+              </div>
+              <div class="trow">
+                <span>Avg. applications / day</span><b>19</b><b class="chg up">+3%</b>
+              </div>
+              <div class="trow">
+                <span>Match rate</span><b>19%</b><b class="chg down">-1%</b>
+              </div>
+              <div class="trow">
+                <span>Top city</span><b>Riyadh</b><b class="chg neutral">—</b>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Monthly -->
+      <section class="admin-db-section">
+        <div class="admin-db-section-head">
+          <h3 data-translate-key="admin-monthly">Monthly Statistics</h3>
+          <p data-translate-key="admin-monthly-desc">Last 30 days overview.</p>
+        </div>
+
+        <div class="admin-db-kpis three">
+          <div class="admin-db-kpi accent">
+            <span class="admin-db-kpi-label" data-translate-key="admin-monthly-students">Total Students</span>
+            <div class="admin-db-kpi-value">3,420</div>
+            <span class="admin-db-kpi-foot">+702 new this month</span>
+          </div>
+
+          <div class="admin-db-kpi accent">
+            <span class="admin-db-kpi-label" data-translate-key="admin-monthly-companies">Partner Companies</span>
+            <div class="admin-db-kpi-value">54</div>
+            <span class="admin-db-kpi-foot">+6 new partners</span>
+          </div>
+
+          <div class="admin-db-kpi accent">
+            <span class="admin-db-kpi-label" data-translate-key="admin-monthly-signed">Successful Matches</span>
+            <div class="admin-db-kpi-value">1,087</div>
+            <span class="admin-db-kpi-foot">+198 signed this month</span>
+          </div>
+        </div>
+
+        <div class="admin-db-panels">
+          <div class="admin-db-panel">
+            <div class="admin-db-panel-head">
+              <h4 data-translate-key="admin-monthly-city">Top cities</h4>
+              <span class="admin-db-panel-note">Demo</span>
+            </div>
+
+            <div class="admin-db-table">
+              <div class="thead">
+                <span data-translate-key="th-city">City</span>
+                <span data-translate-key="th-students">Students</span>
+                <span data-translate-key="th-matches">Matches</span>
+              </div>
+              <div class="trow">
+                <span>Riyadh</span><b>1,520</b><b>520</b>
+              </div>
+              <div class="trow">
+                <span>Jeddah</span><b>1,090</b><b>360</b>
+              </div>
+              <div class="trow">
+                <span>Dhahran</span><b>810</b><b>207</b>
+              </div>
+            </div>
+          </div>
+
+          <div class="admin-db-panel">
+            <div class="admin-db-panel-head">
+              <h4 data-translate-key="admin-monthly-donut">Monthly distribution</h4>
+              <span class="admin-db-panel-note">Majors</span>
+            </div>
+
+            <!-- Simple “donut-like” ring using CSS -->
+            <div class="admin-db-donut-wrap">
+              <div class="admin-db-donut" aria-label="Donut chart"></div>
+
+              <div class="admin-db-donut-legend">
+                <div class="item"><i class="c c1"></i><span>Software Dev</span><b>38%</b></div>
+                <div class="item"><i class="c c2"></i><span>Cybersecurity</span><b>24%</b></div>
+                <div class="item"><i class="c c3"></i><span>IT</span><b>22%</b></div>
+                <div class="item"><i class="c c4"></i><span>ML</span><b>16%</b></div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </section>
+
+    </div>
   </main>
 
+  <footer>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Tadreeb Platform. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="Tadreeb.js"></script>
+
   <script>
-    function logout() {
-      window.location.href = "admin-login.html";
-    }
+    (function () {
+      const el = document.getElementById("adminDbDate");
+      if (!el) return;
+      const d = new Date();
+      el.textContent = d.toLocaleDateString(undefined, { year: "numeric", month: "short", day: "2-digit" });
+    })();
   </script>
+
 </body>
 </html>
