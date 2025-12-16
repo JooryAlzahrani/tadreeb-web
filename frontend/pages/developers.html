@@ -1,58 +1,113 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meet the Team - Tadreeb</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meet the Developers - Tadreeb</title>
+  <link rel="stylesheet" href="Tadreeb.Css" />
 </head>
+
 <body>
-    <header>
-    <nav>
-       <div class="logo">
-                <h1>Tadreeb - Meet the Team</h1>
-            </div>
-        <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="who-we-are.html">Who We Are</a></li>
-            <li><a href="contact-us.html">Contact Us</a></li>
-        </ul>
-    </nav>
+<header>
+  <nav>
+    <div class="logo">
+      <a href="homepage.html">
+        <img src="images/logo_tadreeb.png" alt="Tadreeb Logo" style="height:50px;width:auto;">
+      </a>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="homepage.html" data-translate-key="nav-home">Home</a></li>
+      <li><a href="internships.html" data-translate-key="nav-internships">Internships</a></li>
+      <li><a href="who-we-are.html" data-translate-key="nav-about">Who We Are</a></li>
+      <li><a href="contact-us.html" data-translate-key="nav-contact">Contact Us</a></li>
+      <li><a href="login.html" data-translate-key="nav-login">Login</a></li>
+      <li><a href="register.html" data-translate-key="nav-register">Register</a></li>
+
+      <li>
+        <a href="admin-login.html" class="admin-link">
+          <span class="admin-icon">👤</span>
+          <span data-translate-key="nav-admin">Admin</span>
+        </a>
+      </li>
+
+      <li>
+        <div id="dark-mode-toggle" class="mode-toggle-container" data-mode="light">
+          <span class="toggle-track">
+            <span class="toggle-slider"></span>
+          </span>
+          <span class="mode-text" data-translate-key="mode-text">Dark Mode</span>
+        </div>
+      </li>
+
+      <li>
+        <div id="language-toggle" class="lang-toggle-container" data-lang="en">
+          <span class="lang-text" data-translate-key="lang-en">English</span>
+          <span class="toggle-track">
+            <span class="toggle-slider"></span>
+          </span>
+          <span class="lang-text" data-translate-key="lang-ar">عربي</span>
+        </div>
+      </li>
+    </ul>
+  </nav>
 </header>
 
-    <main class="developers-page-main">
-        <h2>Meet the Developers of Tadreeb Platform</h2>
+<section class="devs-page">
+  <div class="container">
+    <h2>Meet the Developers</h2>
+    <p class="page-subtitle">A 4-person team that designed Tadreeb for students.</p>
 
-        <div class="developers-grid">
-            <div class="developer-card card">
-                <h3>Mehad Alahdal</h3>
-                <p class="role-text">Contact Us and Meet the Developers Page Lead</p>
-                <p><strong>Key Tasks:</strong> Designing and developing the user interfaces for these pages.</p>
-            </div>
+    <div class="devs-grid">
 
-            <div class="developer-card card">
-                <h3>Joory Alzahrani</h3>
-                <p class="role-text">Browse Internships and Internship Page Lead</p>
-            </div>
-             <div class="developer-card card">
-                <h3>Fatima Khan</h3>
-                <p class="role-text">Homepage and Who We Are Page Lead</p>
-            </div>
-             <div class="developer-card card">
-                <h3>Tala Alqahtani</h3>
-                <p class="role-text">Review Internship and Admin Control Page Lead</p>
-            </div>
-             <div class="developer-card card">
-                <h3>Jumanh Alhthali</h3>
-                <p class="role-text">Register Page and Login Page Lead</p>
-            </div>
-        </div>
-            <div style="text-align: center; margin-top: 2rem;">
-              <a href="who-we-are.html" class="btn back-button">← Back to Who We Are</a>
-            </div>
-    </main>
+      <div class="dev-card">
+        <h3>Joory Alzahrani</h3>
+        <p class="dev-role">Computer Science Student</p>
+             </div>
 
-    <footer>
-        <p>Our team wishes you an enjoyable and useful internship journey!</p>
-    </footer>
+ <div class="dev-card">
+        <h3>Mehad Alahdal</h3>
+        <p class="dev-role">Computer Science Student</p>
+             </div>
+
+      <div class="dev-card">
+        <h3>Fatima Khan</h3>
+        <p class="dev-role">Computer Science Student</p>
+             </div>
+
+      <div class="dev-card">
+        <h3>Tala Alqahtani</h3>
+        <p class="dev-role">Computer Science Student</p>
+             </div>
+
+      <div class="dev-card">
+        <h3>Jumanh Alhthali</h3>
+        <p class="dev-role">Computer Science Student</p>
+           </div>
+
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-content">
+    <div class="footer-section">
+      <h3>Tadreeb Platform</h3>
+      <p>Centralized Internship Platform for Saudi University Students</p>
+    </div>
+    <div class="footer-section">
+      <h3>Contact Information</h3>
+      <ul>
+        <li>Email: info@tadreeb.com</li>
+        <li>Phone: 0112345678</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 Tadreeb Platform. All rights reserved.</p>
+  </div>
+</footer>
+
+<script src="Tadreeb.js"></script>
 </body>
 </html>
