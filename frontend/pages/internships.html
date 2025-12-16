@@ -1,230 +1,53 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>All Internship Opportunities - Tadreeb</title>
-  <link rel="stylesheet" href="../assets/css/global.css">
-  <link rel="stylesheet" href="../assets/css/internships.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tadreeb | Login</title>
+
+  <link rel="stylesheet" href="loginandregister.css" />
+  <script src="loginandregister.js" defer></script>
 </head>
 
-<body>
+<body class="auth-page">
 
-<header>
-  <nav>
-    <div class="logo">
-      <h1>Tadreeb</h1>
-    </div>
-    <ul class="nav-links">
-      <li><a href="homepage.html">Home</a></li>
-      <li><a href="internships.html" class="active">Internships</a></li>
-      <li><a href="#login">Login / Register</a></li>
-    </ul>
-  </nav>
-</header>
-
-<section class="all-internships">
-  <div class="container">
-    <h2>All Internship Opportunities</h2>
-
-    <div class="filters">
-      <select id="locationFilter" onchange="filterInternships()">
-        <option value="all">All Locations</option>
-        <option value="Riyadh">Riyadh</option>
-        <option value="Jeddah">Jeddah</option>
-        <option value="Dhahran">Dhahran</option>
-      </select>
-
-      <select id="majorFilter" onchange="filterInternships()">
-        <option value="all">All Majors</option>
-        <option value="Software Development">Software Development</option>
-        <option value="Cybersecurity">Cybersecurity</option>
-        <option value="Machine Learning">Machine Learning</option>
-        <option value="Information Technology">Information Technology</option>
-      </select>
-
-      <select id="statusFilter" onchange="filterInternships()">
-        <option value="all">All Statuses</option>
-        <option value="open">Open</option>
-        <option value="closed">Closed</option>
-      </select>
+  <div class="floating-ui-bar">
+    <div class="auth-logo">
+      <a href="homepage.html">
+        <img src="images/logo_tadreeb.png" alt="Tadreeb Logo">
+      </a>
     </div>
 
-    <!-- GRID (NOW DYNAMIC) -->
-    <div class="internships-grid" id="internshipsGrid"></div>
-
-  </div>
-</section>
-
-<!-- MODAL -->
-<div id="internshipModal" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal()">&times;</span>
-    <h2 id="modalTitle"></h2>
-    <p id="modalDescription"></p>
-    <p id="modalLocation"></p>
-    <p id="modalDeadline"></p>
-    <a id="modalLink" href="#" target="_blank">Go to Website</a>
-
-    <hr style="margin: 1.5rem 0;">
-
-    <div class="reviews-section">
-      <h3>Reviews</h3>
-      <div id="reviewsList"></div>
-      <textarea id="reviewInput" placeholder="Write your review..." rows="3"></textarea>
-      <button id="submitReview">Submit Review</button>
+    <div class="header-toggles">
+      <div id="dark-mode-toggle" class="mode-toggle-container" data-mode="light"></div>
+      <div id="language-toggle" class="lang-toggle-container" data-lang="en"></div>
     </div>
   </div>
-</div>
 
-<footer>
-  <div class="footer-content">
-    <div class="footer-section">
-      <h3>Tadreeb Platform</h3>
-      <p>Centralized Internship Platform for Saudi University Students</p>
+  <div class="auth-container">
+    <div class="auth-mascot">
+      <img src="images/mascot_auth.png" alt="Tadreeb Login Mascot">
     </div>
-    <div class="footer-section">
-      <h3>Contact Information</h3>
-      <ul>
-        <li>Email: info@tadreeb.com</li>
-        <li>Phone: 0112345678</li>
-      </ul>
-    </div>
+
+    <h2 data-translate-key="login-h2">Login</h2>
+
+    <form action="#" method="post">
+      <input type="email" name="email" data-translate-key="ph-email-auth" placeholder="Enter your email" required>
+
+      <div class="password-wrapper">
+        <input type="password" name="password" data-translate-key="ph-password-auth" placeholder="Password" required>
+        <span class="password-toggle" data-state="show" onclick="togglePassword(this)" data-translate-key="btn-show">Show</span>
+      </div>
+
+      <button type="submit" data-translate-key="btn-login">Login</button>
+    </form>
+
+    <p>
+      <span data-translate-key="link-no-account">Don’t have an account?</span>
+      <a href="register.html" data-translate-key="link-register">Register</a>
+    </p>
   </div>
-  <div class="footer-bottom">
-    <p>&copy; 2025 Tadreeb Platform. All rights reserved.</p>
-  </div>
-</footer>
-
-<script>
-
-
-
-const API_URL =
-  "http://127.0.0.1/tadreeb-web/backend/scripts/api/getInternships.php";
-
-window.addEventListener("DOMContentLoaded", fetchInternships);
-
-async function fetchInternships() {
-  try {
-    const res = await fetch(API_URL);
-    const data = await res.json();
-
-    const grid = document.getElementById("internshipsGrid");
-    grid.innerHTML = "";
-
-    data.forEach(item => {
-      const card = document.createElement("div");
-      card.className = "internship-card";
-      card.setAttribute("onclick", "openModal(this)");
-
-      card.dataset.title = item.title;
-      card.dataset.major = item.major;
-      card.dataset.location = item.location;
-      card.dataset.description = item.full_description;
-      card.dataset.deadline = formatDate(item.deadline);
-      card.dataset.link = item.application_link;
-      card.dataset.status = isOpen(item.deadline) ? "open" : "closed";
-
-      card.innerHTML = `
-        <h3>${item.title}</h3>
-        <p>Internship in ${item.major}</p>
-        <p>${item.location}</p>
-        <span class="deadline">Deadline: ${formatDate(item.deadline)}</span>
-      `;
-
-      grid.appendChild(card);
-    });
-  } catch (err) {
-    console.error("Failed to load internships", err);
-  }
-}
-
-function formatDate(dateStr) {
-  const d = new Date(dateStr);
-  return d.toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "short",
-    day: "numeric"
-  });
-}
-
-function isOpen(deadline) {
-  return new Date(deadline) >= new Date();
-}
-
-
-function openModal(card) {
-  document.getElementById("modalTitle").innerText = card.dataset.title;
-  document.getElementById("modalDescription").innerText = card.dataset.description;
-  document.getElementById("modalLocation").innerText = "Location: " + card.dataset.location;
-  document.getElementById("modalDeadline").innerText = "Deadline: " + card.dataset.deadline;
-  document.getElementById("modalLink").href = card.dataset.link;
-  document.getElementById("internshipModal").style.display = "block";
-  loadReviews(card.dataset.title);
-}
-
-function closeModal() {
-  document.getElementById("internshipModal").style.display = "none";
-  document.getElementById("reviewsList").innerHTML = "";
-}
-
-document.getElementById("submitReview").addEventListener("click", function () {
-  const title = document.getElementById("modalTitle").innerText;
-  const reviewText = document.getElementById("reviewInput").value.trim();
-  if (!reviewText) return;
-
-  const reviews = JSON.parse(localStorage.getItem(title)) || [];
-  reviews.push(reviewText);
-  localStorage.setItem(title, JSON.stringify(reviews));
-
-  displayReviews(reviews);
-  document.getElementById("reviewInput").value = "";
-});
-
-function loadReviews(title) {
-  const reviews = JSON.parse(localStorage.getItem(title)) || [];
-  displayReviews(reviews);
-}
-
-function displayReviews(reviews) {
-  const reviewsList = document.getElementById("reviewsList");
-  reviewsList.innerHTML = "";
-  reviews.forEach(review => {
-    const p = document.createElement("p");
-    p.innerText = "• " + review;
-    reviewsList.appendChild(p);
-  });
-}
-
-window.onclick = function (event) {
-  let modal = document.getElementById("internshipModal");
-  if (event.target === modal) {
-    modal.style.display = "none";
-  }
-};
-
-function filterInternships() {
-  const locationFilter = document.getElementById("locationFilter").value.toLowerCase();
-  const majorFilter = document.getElementById("majorFilter").value.toLowerCase();
-  const statusFilter = document.getElementById("statusFilter").value.toLowerCase();
-
-  const cards = document.querySelectorAll(".internship-card");
-
-  cards.forEach(card => {
-    const location = card.dataset.location.toLowerCase();
-    const major = card.dataset.major.toLowerCase();
-    const status = card.dataset.status.toLowerCase();
-
-    const matchLocation = locationFilter === "all" || location === locationFilter;
-    const matchMajor = majorFilter === "all" || major === majorFilter;
-    const matchStatus = statusFilter === "all" || status === statusFilter;
-
-    card.style.display =
-      matchLocation && matchMajor && matchStatus ? "block" : "none";
-  });
-}
-</script>
 
 </body>
 </html>
+

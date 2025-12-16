@@ -1,68 +1,61 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" dir="ltr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tadreeb | Register</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f7f7f7;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-    }
-    .container {
-      background-color: #fff;
-      padding: 30px 40px;
-      border: 1px solid #ccc;
-      border-radius: 8px;
-      width: 350px;
-      box-shadow: 0 0 8px rgba(0,0,0,0.1);
-      text-align: center;
-    }
-    input {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      border: 1px solid #ccc;
-      border-radius: 4px;
-      box-sizing: border-box;
-    }
-    button {
-      width: 100%;
-      padding: 10px;
-      border: none;
-      background-color: #333;
-      color: white;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-    button:hover {
-      background-color: #555;
-    }
-    p {
-      font-size: 14px;
-    }
-    a {
-      text-decoration: none;
-      color: #333;
-    }
-  </style>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="loginandregister.css">
+
+  <!-- JS -->
+  <script src="loginandregister.js" defer></script>
 </head>
-<body>
-  <div class="container">
-    <h2>Tadreeb - Register</h2>
-    <form action="#" method="post">
-      <input type="text" id="fullname" name="fullname" placeholder="Full name" required>
-      <input type="email" id="email" name="email" placeholder="Email address" required>
-      <input type="password" id="password" name="password" placeholder="Password" required>
-      <input type="password" id="confirm" name="confirm" placeholder="Confirm password" required>
-      <button type="submit">Register</button>
-    </form>
-    <p>Already have an account? <a href="login.html">Login</a></p>
+
+<body class="auth-page">
+
+  <div class="floating-ui-bar">
+    <div class="auth-logo">
+      <a href="homepage.html">
+        <img src="images/logo_tadreeb.png" alt="Tadreeb Logo">
+      </a>
+    </div>
+
+    <div class="header-toggles">
+      <div id="dark-mode-toggle" class="mode-toggle-container" data-mode="light"></div>
+      <div id="language-toggle" class="lang-toggle-container" data-lang="en"></div>
+    </div>
   </div>
+
+  <div class="auth-container">
+    <div class="auth-mascot">
+      <img src="images/mascot_auth.png" alt="Tadreeb Register Mascot">
+    </div>
+
+    <h2 data-translate-key="register-h2">Register</h2>
+
+    <form action="#" method="post">
+      <input type="text" name="fullname" data-translate-key="ph-full-name" placeholder="Full name" required>
+      <input type="email" name="email" data-translate-key="ph-email-auth" placeholder="Enter your email" required>
+
+      <div class="password-wrapper">
+        <input type="password" name="password" data-translate-key="ph-password-auth" placeholder="Password" required>
+        <span class="password-toggle" data-state="show" onclick="togglePassword(this)" data-translate-key="btn-show">Show</span>
+      </div>
+
+      <div class="password-wrapper">
+        <input type="password" name="confirm" data-translate-key="ph-confirm-auth" placeholder="Confirm Password" required>
+        <span class="password-toggle" data-state="show" onclick="togglePassword(this)" data-translate-key="btn-show">Show</span>
+      </div>
+
+      <button type="submit" data-translate-key="btn-register">Register</button>
+    </form>
+
+    <p>
+      <span data-translate-key="link-has-account">Already have an account?</span>
+      <a href="login.html" data-translate-key="link-login">Login</a>
+    </p>
+  </div>
+
 </body>
 </html>
