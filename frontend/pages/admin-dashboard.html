@@ -36,6 +36,11 @@
             <span class="mode-text" data-translate-key="mode-text">Dark Mode</span>
           </div>
         </li>
+        <li>
+  <button class="admin-logout-btn" onclick="adminLogout()">
+    Logout
+  </button>
+</li>
 
               </ul>
     </nav>
@@ -332,6 +337,11 @@
       el.textContent = d.toLocaleDateString(undefined, { year: "numeric", month: "short", day: "2-digit" });
     })();
   </script>
+<script>
+  function adminLogout() {
+    window.location.href = "admin-login.html";
+  }
+</script>
 
 </body>
 </html>

@@ -1347,6 +1347,7 @@ html[dir="rtl"] .admin-password-row{ grid-template-columns: 1fr auto; }
   opacity: .85;
 }
 
+
 /* mini-table inside KPI */
 .admin-db-mini-table{
   margin-top: 12px;
@@ -1592,6 +1593,36 @@ html[dir="rtl"] .admin-db-bars b{ text-align: left; }
   .admin-db-hero-right{ justify-items: start; }
   .admin-db-donut-wrap{ grid-template-columns: 1fr; justify-items: center; }
   .admin-db-bars .bar-row{ grid-template-columns: 1fr; }
+}
+/* 
+   Admin Logout Button
+    */
+
+.admin-logout-btn {
+  background: transparent;
+  border: 2px solid #FEF5EF;
+  color: #FEF5EF;
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.admin-logout-btn:hover {
+  background-color: #FEF5EF;
+  color: var(--heading-color);
+}
+
+/* Dark mode */
+.dark-mode .admin-logout-btn {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+
+.dark-mode .admin-logout-btn:hover {
+  background-color: var(--accent-color);
+  color: var(--bg-primary);
 }
 
 
