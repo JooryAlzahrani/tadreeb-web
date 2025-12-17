@@ -140,6 +140,27 @@
       <p>&copy; 2025 Tadreeb Platform. All rights reserved.</p>
     </div>
   </footer>
+<script>
+  document.getElementById("adminLoginForm").addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    const email = document.getElementById("adminEmail").value.trim();
+    const password = document.getElementById("adminPassword").value.trim();
+    const errorMsg = document.getElementById("adminLoginError");
+
+    
+    const DEMO_EMAIL = "admin@tadreeb.com";
+    const DEMO_PASSWORD = "admin123";
+
+    if (email === DEMO_EMAIL && password === DEMO_PASSWORD) {
+      
+      window.location.href = "admin-dashboard.html";
+    } else {
+      errorMsg.textContent = "Invalid admin email or password.";
+      errorMsg.style.display = "block";
+    }
+  });
+</script>
 
   <script src="Tadreeb.js"></script>
 </body>
